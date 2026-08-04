@@ -1,14 +1,14 @@
 export interface Doctor {
   id: string;
   name: string;
-  slug: string; // URL-friendly name (e.g., dr-mahedi-hasan)
-  degree: string;
-  specialty: string;
-  department: string;
+  qualification: string;
+  speciality: string;
   designation: string;
-  visitingHours: string;
-  roomNo: string;
+  department: string;
+  hospital: string;
+  experience: string;
   image: string;
-  phone?: string;
-  isAvailableToday?: boolean;
+  chamberTime: string;
+  phone: string;
+  about: string;
 }

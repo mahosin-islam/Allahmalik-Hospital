@@ -1,13 +1,14 @@
-import HeroSection from "@/components/landing/HeroSection"
+import DoctorsSection from '@/components/landing/DoctorsSection'
+import HeroSection from '@/components/landing/HeroSection'
+import React from 'react'
 
-
-
-function LandingPage() {
+function Main() {
   return (
     <div>
-      < HeroSection/>
+      <HeroSection/>
+      <DoctorsSection/>
     </div>
   )
 }
 
-export default LandingPage
+export default Main

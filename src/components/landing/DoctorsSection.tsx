@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Clock, } from "lucide-react";
+import { Stethoscope, ArrowRight, Award, Clock, ChevronRight } from "lucide-react";
 import { doctorsData } from "@/data/doctors";
 
-export default function Doctors() {
-  const featuredDoctors = doctorsData;
+export default function DoctorsSection() {
+  const featuredDoctors = doctorsData.slice(0, 4);
 
   // 🟢 Google Structured Data (Schema.org / ItemList Markup) for SEO
   const jsonLd = {
@@ -33,7 +33,29 @@ export default function Doctors() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold tracking-wide mb-3">
+              <Stethoscope className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span>অভিজ্ঞ বিশেষজ্ঞ চিকিৎসকবৃন্দ</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+              আমাদের নিবেদিতপ্রাণ ডাক্তারদের তালিকা
+            </h2>
+            <p className="mt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
+              অভিজ্ঞ ও বিশেষায়িত ডাক্তারদের পরামর্শ পেতে আপনার প্রয়োজনীয় বিভাগের ডাক্তার নির্বাচন করুন।
+            </p>
+          </div>
+
+          <Link
+            href="/doctors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors group self-start md:self-auto shrink-0"
+          >
+            <span>সকল ডাক্তার দেখুন</span>
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
 
         {/* Doctors Card Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
