@@ -139,7 +139,7 @@ export default function AboutPage() {
             </div>
             <h3 className="text-lg font-bold text-slate-800">আমাদের মিশন</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              কম খরচে আধুনিক ও আন্তর্জাতিক মানের চিকিৎসা সেবা সাধারণ মানুষের দোরগোড়ায় পৌঁছে দেওয়া।
+            com খরচে আধুনিক ও আন্তর্জাতিক মানের চিকিৎসা সেবা সাধারণ মানুষের দোরগোড়ায় পৌঁছে দেওয়া।
             </p>
           </div>
 

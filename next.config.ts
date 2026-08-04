@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  typescript: {
+    ignoreBuildErrors: false, // আসল মারাত্মক টাইপ এরর থাকলে বিল্ড থামাবে
+  },
 };
 
 export default nextConfig;
