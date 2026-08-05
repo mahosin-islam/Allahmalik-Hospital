@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     template: "%s | Allahmalik Hospital",
   },
   description:
+
+
+
     "Allahmalik Hospital provides 24/7 emergency medical care, expert doctor consultations, and modern pathology services in Barguna.",
   keywords: [
     "Allahmalik Hospital",

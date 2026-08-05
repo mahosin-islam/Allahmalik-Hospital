@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Clock, } from "lucide-react";
+import { ArrowRight, Award, Clock } from "lucide-react";
 import { doctorsData } from "@/data/doctors";
 
 export default function Doctors() {
@@ -33,8 +33,6 @@ export default function Doctors() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
-
         {/* Doctors Card Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {featuredDoctors.map((doctor) => (
@@ -43,18 +41,20 @@ export default function Doctors() {
               className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
             >
               <div>
-                {/* Image & Badge Container */}
-                <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-slate-100 dark:bg-slate-700">
+                {/* 🎯 Image & Badge Container (Aspect Ratio Aspect Used For Responsiveness) */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-700">
                   <Image
                     src={doctor.image}
-                    alt={`${doctor.name} - ${doctor.speciality}`} // SEO friendly alt
+                    alt={`${doctor.name} - ${doctor.speciality}`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw" // Performance & SEO optimization
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-md">
-                    {doctor.department}
-                  </div>
+                  {doctor.department && (
+                    <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-md z-10">
+                      {doctor.department}
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Content */}
@@ -95,11 +95,9 @@ export default function Doctors() {
                   <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </div>
-
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );
