@@ -100,11 +100,12 @@ export default function HeroSection() {
             key={slide.id}
             className="relative w-full h-full flex items-center"
           >
-            {/* Background Image */}
+            {/* Background Image (Fixed by adding sizes) */}
             <Image
               src={slide.image}
               alt={slide.title}
               fill
+              sizes="100vw"
               priority={slide.id === 1}
               className="object-cover object-center z-0"
             />
@@ -113,10 +114,9 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-800/90 via-slate-800/70 to-slate-800/30 z-10" />
 
             {/* Content Container */}
-            <div className="relative  z-20 container mx-auto px-4 sm:px-4 md:px-12 lg:px-16 xl:px-20 w-full h-full flex items-center justify-center ">
+            <div className="relative z-20 container mx-auto px-4 sm:px-4 md:px-12 lg:px-16 xl:px-20 w-full h-full flex items-center justify-center">
 
-
-              <div className=" max-w-3xl lg:max-w-4xl xl:max-w-5xl space-y-4 sm:space-y-6 md:space-y-7 xl:space-y-8">
+              <div className="max-w-3xl lg:max-w-4xl xl:max-w-5xl space-y-4 sm:space-y-6 md:space-y-7 xl:space-y-8">
                 
                 {/* Badge Tag */}
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm shadow-sm transition-all duration-500">
@@ -125,7 +125,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className=" text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight sm:leading-[1.15] md:leading-[1.1] tracking-tight drop-shadow-lg">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight sm:leading-[1.15] md:leading-[1.1] tracking-tight drop-shadow-lg">
                   {slide.title}
                 </h1>
 

@@ -69,6 +69,7 @@ export default function MedicineSpecialityPage() {
               src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1600"
               alt="General Medicine Care"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -170,6 +171,7 @@ export default function MedicineSpecialityPage() {
                       src={doc.image}
                       alt={doc.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />

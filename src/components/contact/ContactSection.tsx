@@ -53,8 +53,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-slate-800 mb-1">হটলাইন ও ফোন</h3>
-                <p className="text-sm text-slate-600">জরুরি: <a href="tel:01950258025" className="hover:underline text-emerald-600">০১৯৫০-২৫৮০২৫</a></p>
-                <p className="text-sm text-slate-600 mt-0.5">রিসেপশন: <a href="tel:01700000000" className="hover:underline text-emerald-600">০১৭০০-০০০০০০</a></p>
+                <p className="text-sm text-slate-600">জরুরি: <a href="tel:01965331717" className="hover:underline text-emerald-600">০১৯৬৫-৩৩১৭১৭</a></p>
+                <p className="text-sm text-slate-600 mt-0.5">রিসেপশন: <a href="tel:01965331717" className="hover:underline text-emerald-600">০১৯৬৫-৩৩১৭১৭</a></p>
               </div>
             </div>
 
