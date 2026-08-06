@@ -76,6 +76,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // 🟢 এখানে গুগল ভেরিফিকেশন কোডটি বসবে
+  verification: {
+    google: "qmAbE_39xZhN-H6zLfVnrJ7XUW777DxrJ501--0qPdQ", 
+    
+  },
 };
 
 export default function RootLayout({
@@ -95,7 +100,7 @@ export default function RootLayout({
       "https://res.cloudinary.com/rob9jlkw/image/upload/v1785994583/hospila2_jukx1v.jpg",
     description:
       "Allahmalik Hospital provides 24/7 emergency medical care, expert doctor consultations, and diagnostic services in Barguna, Bangladesh.",
-    telePhone: "+8801700000000", // আপনার হাসপাতালের আসল ফোন নম্বর বসান
+    telePhone: "+8801700000000",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Barguna",
@@ -104,8 +109,8 @@ export default function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "22.1528", // Barguna Latitude
-      longitude: "90.1260", // Barguna Longitude
+      latitude: "22.1528",
+      longitude: "90.1260",
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

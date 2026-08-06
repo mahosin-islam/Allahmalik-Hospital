@@ -18,7 +18,7 @@ export default function PartnerReadiness() {
     {
       id: 1,
       title: "বিশেষজ্ঞ চিকিৎসকদের পরামর্শ ও অনুমোদন",
-      description: "রোগীদের সঠিক ও নির্ভরযোগ্য চিকিৎসা সেবা নিশ্চিত করতে প্রতিটি ধাপে অভিজ্ঞ চিকিৎসকদের নিবিড় তত্ত্বাবধান প্রদান করা হয়।",
+      description: "রোগীদের সঠিক ও নির্ভরযোগ্য চিকিৎসা সেবা নিশ্চিত করতে প্রতিটি ধাপে অভিজ্ঞ চিকিৎসকদের নিবিড় তত্ত্বাবধান প্রদান করা হয়।",
       icon: <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconBg: "bg-emerald-100 dark:bg-emerald-950/50",
       iconColor: "text-emerald-600 dark:text-emerald-400"
@@ -26,7 +26,7 @@ export default function PartnerReadiness() {
     {
       id: 2,
       title: "ইন-হাউস সার্বক্ষণিক চেম্বার সেবা",
-      description: "হাসপাতালের নিজস্ব অভিজ্ঞ ডাক্তারদের মাধ্যমে সঠিক ডায়াগনস্টিক সাপোর্ট ও তাৎক্ষণিক পরামর্শ পাওয়ার সুব্যবস্থা।",
+      description: "হাসপাতালের নিজস্ব অভিজ্ঞ ডাক্তারদের মাধ্যমে সঠিক ডায়াগনস্টিক সাপোর্ট ও তাৎক্ষণিক পরামর্শ পাওয়ার সুব্যবস্থা।",
       icon: <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconBg: "bg-emerald-100 dark:bg-emerald-950/50",
       iconColor: "text-emerald-600 dark:text-emerald-400"
@@ -34,7 +34,7 @@ export default function PartnerReadiness() {
     {
       id: 3,
       title: "আন্তরিক ও সেবাভিত্তিক পরিবেশ",
-      description: "রোগীর দ্রুত সুস্থতার জন্য প্রয়োজন একটি আন্তরিক পরিবেশ। আমাদের প্রতিটি স্টাফ আন্তরিকতার সাথে আপনার সেবায় নিয়োজিত।",
+      description: "রোগীর দ্রুত সুস্থতার জন্য প্রয়োজন একটি আন্তরিক পরিবেশ। আমাদের প্রতিটি স্টাফ আন্তরিকতার সাথে আপনার সেবায় নিয়োজিত।",
       icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconBg: "bg-emerald-100 dark:bg-emerald-950/50",
       iconColor: "text-emerald-600 dark:text-emerald-400"
@@ -49,7 +49,7 @@ export default function PartnerReadiness() {
       <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-          {/* বামপাশের সার্কুলার ইমেজ */}
+          {/* বামপাশের সার্কুলার ইমেজ (Fixed by adding sizes) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] rounded-full overflow-hidden border-4 border-white dark:border-card shadow-[0_20px_50px_rgba(18,40,60,0.12)] transition-transform duration-500 hover:scale-[1.01]">
               <Image
@@ -57,6 +57,7 @@ export default function PartnerReadiness() {
                 alt="ডাক্তার ও রোগীর পরামর্শ"
                 className="object-cover object-center"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 440px"
                 priority
               />
             </div>
@@ -68,11 +69,11 @@ export default function PartnerReadiness() {
             {/* হেডার ব্লক */}
             <div className="space-y-3">
               <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-emerald-600 dark:text-primary block">
-                পার্টনারশিপ ও মাননিয়ন্ত্রণ
+                পার্টনারশিপ ও মাননিয়ন্ত্রণ
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-foreground leading-[1.25]">
                 মানসম্মত সেবার জন্য আমরা <br />
-                যেসব <span className="text-emerald-600 dark:text-primary">বিষয় সুনিশ্চিত করি</span>
+                যেসব <span className="text-emerald-600 dark:text-primary">বিষয় সুনিশ্চিত করি</span>
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-muted-foreground font-medium pt-1">
                 রোগীর সঠিক চিকিৎসা ও সন্তুষ্টি নিশ্চিত করাই আমাদের প্রতিটি পদক্ষেপের মূল লক্ষ্য।

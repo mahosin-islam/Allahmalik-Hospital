@@ -6,7 +6,6 @@ import {
   Award,
   Users,
   HeartPulse,
-  CheckCircle2,
   PhoneCall,
   UserCheck,
   Quote,
@@ -18,15 +17,6 @@ export default function AboutView() {
     { id: 2, name: "সেবাগ্রাহক রোগী", value: "৫০,০০০+" },
     { id: 3, name: "২৪/৭ জরুরি ও ল্যাব সেবা", value: "৩৬৫ দিন" },
     { id: 4, name: "আধুনিক ডিজিটাল টেস্ট", value: "১০০+" },
-  ];
-
-  const features = [
-    "আন্তর্জাতিক মানের ডিজিটাল ডায়াগনস্টিক ল্যাব",
-    "অভিজ্ঞ ও প্রখ্যাত কনসালটেন্ট চিকিৎসকমণ্ডলী",
-    "২৪ ঘণ্টা জরুরি বিভাগ ও আইসিইউ সার্পোট ব্যবস্থা",
-    "সাধারণ মানুষের জন্য সাশ্রয়ী মূল্যে সেবা",
-    "সম্পূর্ণ জীবাণুমুক্ত ও আধুনিক হাসপাতাল পরিবেশ",
-    "দ্রুত ও শতভাগ নির্ভুল টেস্ট রিপোর্ট প্রদান",
   ];
 
   return (
@@ -43,10 +33,10 @@ export default function AboutView() {
               মানবসেবায় নিবেদিত বরগুনার অন্যতম নির্ভরযোগ্য চিকিৎসা প্রতিষ্ঠান
             </h1>
             <p className="text-slate-600 leading-relaxed">
-              আল্লাহ মালিক হসপিটাল এন্ড ডায়াগনস্টিক সেন্টার বরগুনা অঞ্চলের মানুষের আধুনিক ও উন্নত চিকিৎসাসেবা নিশ্চিত করতে সর্বদা প্রতিশ্রুত। উন্নত প্রযুক্তি এবং অভিজ্ঞ বিশেষজ্ঞদের সমন্বয়ে আমরা নির্ভুল রোগ নির্ণয় ও সর্বোচ্চ মানের চিকিৎসা দিয়ে থাকি।
+              আল্লাহ মালিক হসপিটাল এন্ড ডায়াগনস্টিক সেন্টার বরগুনা অঞ্চলের মানুষের আধুনিক ও উন্নত চিকিৎসাসেবা নিশ্চিত করতে সর্বদা প্রতিশ্রুত। উন্নত প্রযুক্তি এবং অভিজ্ঞ বিশেষজ্ঞদের সমন্বয়ে আমরা নির্ভুল রোগ নির্ণয় ও সর্বোচ্চ মানের চিকিৎসা দিয়ে থাকি।
             </p>
             <p className="text-slate-600 leading-relaxed">
-              জরুরি প্রয়োজনে ২৪ ঘণ্টা অ্যাম্বুলেন্স সেবা, ডিজিটাল প্যাথলজি এবং যেকোনো সময়ে অভিজ্ঞ ডাক্তারের পরামর্শের সুযোগ রয়েছে এখানে।
+              জরুরি প্রয়োজনে ২৪ ঘণ্টা অ্যাম্বুলেন্স সেবা, ডিজিটাল প্যাথলজি এবং যেকোনো সময়ে অভিজ্ঞ ডাক্তারের পরামর্শের সুযোগ রয়েছে এখানে।
             </p>
 
             <div className="pt-2 flex flex-wrap gap-4">
@@ -66,12 +56,13 @@ export default function AboutView() {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image (Fixed by adding sizes) */}
           <div className="relative h-[380px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border-4 border-white">
             <Image
               src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=1200"
               alt="Allahmalik Hospital Building Barguna"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               priority
             />
@@ -94,21 +85,22 @@ export default function AboutView() {
           </div>
         </div>
 
-        {/* 3. OWNER / LEADERSHIP SECTION (New Added) */}
+        {/* 3. OWNER / LEADERSHIP SECTION */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Owner Image */}
-           <div className="lg:col-span-4 relative h-80 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 bg-slate-50 dark:bg-slate-900">
-  <Image
-    src="https://res.cloudinary.com/rob9jlkw/image/upload/v1786029286/Gemini_Generated_Image_gxby35gxby35gxby_fqmkrz.png"
-    alt="Chairman / Managing Director of Allah Malik Hospital"
-    fill
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
-    className="object-cover md:object-contain object-top transition-all duration-300"
-    priority
-  />
-</div>
+            <div className="lg:col-span-4 relative h-80 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 bg-slate-50 dark:bg-slate-900">
+              <Image
+                src="https://res.cloudinary.com/rob9jlkw/image/upload/v1786029286/Gemini_Generated_Image_gxby35gxby35gxby_fqmkrz.png"
+                alt="Chairman / Managing Director of Allah Malik Hospital"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
+                className="object-cover md:object-contain object-top transition-all duration-300"
+                priority
+              />
+            </div>
+
             {/* Owner Text Details */}
             <div className="lg:col-span-8 space-y-4">
               <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block">
@@ -121,7 +113,7 @@ export default function AboutView() {
               <div className="relative pl-6 border-l-4 border-emerald-500 py-1">
                 <Quote className="w-8 h-8 text-emerald-100 absolute -top-3 -left-3 -z-10" />
                 <p className="text-slate-700 italic text-base leading-relaxed">
-                  &quot;আমাদের মূল উদ্দেশ্য কেবল ব্যবসা নয়, বরং বরগুনার সাধারণ ও অবহেলিত মানুষের দোরগোড়ায় উন্নত ও সঠিক চিকিৎসা পৌঁছে দেওয়া। আধুনিক ডায়াগনস্টিক সুবিধা ও সেবামূলক মানসিকতা নিয়ে আমরা প্রতিদিন কাজ করে যাচ্ছি।&quot;
+                  &quot;আমাদের মূল উদ্দেশ্য কেবল ব্যবসা নয়, বরং বরগুনার সাধারণ ও অবহেলিত মানুষের দোরগোড়ায় উন্নত ও সঠিক চিকিৎসা পৌঁছে দেওয়া। আধুনিক ডায়াগনস্টিক সুবিধা ও সেবামূলক মানসিকতা নিয়ে আমরা প্রতিদিন কাজ করে যাচ্ছি।&quot;
                 </p>
               </div>
 
@@ -145,9 +137,7 @@ export default function AboutView() {
           </div>
         </div>
 
-     
-
-        {/* 5. MISSION & VISION CARDS */}
+        {/* 4. MISSION & VISION CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-3">
             <div className="bg-emerald-50 text-emerald-600 p-3 rounded-xl w-fit">
@@ -155,7 +145,7 @@ export default function AboutView() {
             </div>
             <h3 className="text-lg font-bold text-slate-800">আমাদের মিশন</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              সাশ্রয়ী মূল্যে আধুনিক ও আন্তর্জাতিক মানের স্বাস্থ্যসেবা বরগুনার প্রতিটি মানুষের কাছে পৌঁছে দেওয়া।
+              সাশ্রয়ী মূল্যে আধুনিক ও আন্তর্জাতিক মানের স্বাস্থ্যসেবা বরগুনার প্রতিটি মানুষের কাছে পৌঁছে দেওয়া।
             </p>
           </div>
 
@@ -165,7 +155,7 @@ export default function AboutView() {
             </div>
             <h3 className="text-lg font-bold text-slate-800">আমাদের ভিশন</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              সঠিক ডায়াগনস্টিক রিপোর্ট ও উন্নত চিকিৎসার মাধ্যমে উপকূলীয় অঞ্চলের সবচেয়ে নির্ভরযোগ্য হেলথকেয়ার সেন্টার হিসেবে গড়ে ওঠা।
+              সঠিক ডায়াগনস্টিক রিপোর্ট ও উন্নত চিকিৎসার মাধ্যমে উপকূলীয় অঞ্চলের সবচেয়ে নির্ভরযোগ্য হেলথকেয়ার সেন্টার হিসেবে গড়ে ওঠা।
             </p>
           </div>
 

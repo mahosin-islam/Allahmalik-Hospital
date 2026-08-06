@@ -70,6 +70,7 @@ export default function OrthopedicsSpecialityPage() {
               src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=1600"
               alt="Orthopedics & Bone Care"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -171,6 +172,7 @@ export default function OrthopedicsSpecialityPage() {
                       src={doc.image}
                       alt={doc.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />

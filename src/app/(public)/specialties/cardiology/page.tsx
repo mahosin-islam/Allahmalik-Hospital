@@ -66,10 +66,11 @@ export default function CardiologySpecialityPage() {
         {/* 1. HERO SECTION WITH RELEVANT IMAGE */}
         <div className="relative rounded-3xl bg-slate-900 text-white overflow-hidden shadow-2xl">
           <div className="absolute inset-0 opacity-40">
-            <Image
+           <Image
               src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&q=80&w=1600"
               alt="Cardiology & Heart Care"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -171,6 +172,7 @@ export default function CardiologySpecialityPage() {
                       src={doc.image}
                       alt={doc.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
