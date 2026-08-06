@@ -11,36 +11,56 @@ interface PageProps {
   }>;
 }
 
-// 🟢 Dynamic SEO Metadata Generation Function
+// 🟢 Fully Optimized Multilingual Dynamic SEO Metadata Generation
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const doctor = doctorsData.find((doc) => doc.id === resolvedParams.id);
 
   if (!doctor) {
     return {
-      title: "ডাক্তার পাওয়া যায়নি",
+      title: "Doctor Not Found | ডাক্তার পাওয়া যায়নি",
       description: "অনুরোধকৃত ডাক্তারের তথ্য খুঁজে পাওয়া যায়নি।",
     };
   }
 
+  const siteUrl = "https://www.allahmalik-hospital.com";
+
   return {
-    title: `${doctor.name} - ${doctor.department} | বিশেষজ্ঞ ডাক্তার`,
-    description: `${doctor.name} - ${doctor.qualification}, ${doctor.speciality}। ${doctor.about.substring(0, 150)}...`,
+    title: `${doctor.nameEn} (${doctor.name}) - Serial & Chamber Time | Allah Malik Hospital`,
+    description: `${doctor.nameEn} (${doctor.name}) - ${doctor.qualification}. ${doctor.specialityEn}. Phone: ${doctor.phone}. Call for serial at Allah Malik Hospital Barguna.`,
+    keywords: [
+      doctor.nameEn,
+      doctor.name,
+      `${doctor.nameEn} Barguna`,
+      `${doctor.name} বরগুনা`,
+      `${doctor.nameEn} Phone Number`,
+      `${doctor.nameEn} Serial Number`,
+      `${doctor.nameEn} Chamber Time`,
+      `${doctor.specialityEn} Barguna`,
+      `${doctor.departmentEn} Doctor Barguna`,
+      "Allah Malik Hospital Doctor Serial",
+      "আল্লাহ মালিক হাসপাতাল বরগুনা",
+    ],
+    alternates: {
+      canonical: `${siteUrl}/doctors/${doctor.id}`,
+    },
     openGraph: {
-      title: `${doctor.name} - ${doctor.department}`,
-      description: doctor.qualification,
+      title: `${doctor.nameEn} (${doctor.name}) | ${doctor.departmentEn}`,
+      description: `${doctor.qualification} - Call ${doctor.phone} for serial at Allah Malik Hospital.`,
+      url: `${siteUrl}/doctors/${doctor.id}`,
+      siteName: "Allah Malik Hospital",
       images: [
         {
           url: doctor.image,
           width: 800,
           height: 600,
-          alt: doctor.name,
+          alt: `${doctor.nameEn} - ${doctor.name}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: doctor.name,
+      title: `${doctor.nameEn} (${doctor.name})`,
       description: doctor.qualification,
       images: [doctor.image],
     },
@@ -55,17 +75,40 @@ export default async function DoctorDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // 🟢 Schema.org Physician JSON-LD Injection for Rich Snippets
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": `${doctor.nameEn} (${doctor.name})`,
+    "image": doctor.image,
+    "telephone": doctor.phone,
+    "medicalSpecialty": doctor.specialityEn,
+    "description": doctor.about,
+    "url": `https://www.allahmalik-hospital.com/doctors/${doctor.id}`,
+    "hospitalAffiliation": {
+      "@type": "Hospital",
+      "name": "Allah Malik Hospital Barguna",
+      "url": "https://www.allahmalik-hospital.com"
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-8 sm:py-12 md:py-16">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-8 sm:py-12 md:py-16">
+      {/* 🎯 Schema.org Script Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
         <Link
-          href="/"
+          href="/doctors"
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-slate-600 hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400 transition-colors mb-4 sm:mb-6"
         >
           <ChevronLeft className="w-4 h-4" />
-          <span>হোম পেজে ফিরে যান</span>
+          <span>ডাক্তারদের তালিকায় ফিরে যান</span>
         </Link>
 
         {/* Doctor Details Main Card */}
@@ -75,11 +118,12 @@ export default async function DoctorDetailPage({ params }: PageProps) {
             
             {/* Left Column: Image */}
             <div className="md:col-span-5 relative">
-              <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-md">
+              <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-800">
                 <Image
                   src={doctor.image}
-                  alt={doctor.name}
+                  alt={`${doctor.nameEn} - ${doctor.name}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover object-top"
                   priority
                 />
@@ -132,7 +176,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
 
               {/* About Doctor */}
               <div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1">চিকিৎসক সম্পর্কে:</h3>
+                <h2 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1">চিকিৎসক সম্পর্কে:</h2>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {doctor.about}
                 </p>
@@ -164,6 +208,6 @@ export default async function DoctorDetailPage({ params }: PageProps) {
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }

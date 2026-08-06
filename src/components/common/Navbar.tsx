@@ -30,9 +30,8 @@ export default function Navbar() {
         { name: "Gastroenterology", href: "/specialties/gastroenterology" },
         { name: "Medicine & Diabetology", href: "/specialties/medicine" },
         { name: "Pediatrics & Neonatology", href: "/specialties/pediatrics" },
-        { name: "Urology", href: "/specialties/urology" },
         { name: "ENT (Ear, Nose, Throat)", href: "/specialties/ent" },
-        { name: "Neurology", href: "/specialties/neurology" },
+       
       ],
     },
     { name: "About Us", href: "/about" },
