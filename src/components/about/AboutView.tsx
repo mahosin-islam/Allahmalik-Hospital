@@ -99,15 +99,16 @@ export default function AboutView() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Owner Image */}
-            <div className="lg:col-span-4 relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-md border-2 border-slate-100">
-              <Image
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800"
-                alt="Chairman / Managing Director of Allahmalik Hospital"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-
+           <div className="lg:col-span-4 relative h-80 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 bg-slate-50 dark:bg-slate-900">
+  <Image
+    src="https://res.cloudinary.com/rob9jlkw/image/upload/v1786029286/Gemini_Generated_Image_gxby35gxby35gxby_fqmkrz.png"
+    alt="Chairman / Managing Director of Allah Malik Hospital"
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
+    className="object-cover md:object-contain object-top transition-all duration-300"
+    priority
+  />
+</div>
             {/* Owner Text Details */}
             <div className="lg:col-span-8 space-y-4">
               <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block">
@@ -144,45 +145,7 @@ export default function AboutView() {
           </div>
         </div>
 
-        {/* 4. WHY CHOOSE US */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative h-48 sm:h-60 rounded-2xl overflow-hidden shadow-md">
-              <Image
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600"
-                alt="Doctor Consultation at Allahmalik Hospital"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-48 sm:h-60 rounded-2xl overflow-hidden shadow-md mt-6">
-              <Image
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600"
-                alt="Diagnostic Lab Equipment Barguna"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block">
-              Our Key Features 
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-800">
-              কেন আমাদের সেবা গ্রহণ করবেন?
-            </h2>
-
-            <div className="space-y-3">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-slate-700 text-sm font-medium">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+     
 
         {/* 5. MISSION & VISION CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
