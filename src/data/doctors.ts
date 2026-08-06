@@ -37,7 +37,7 @@ export const doctorsData: Doctor[] = [
     department: "হৃদরোগ ও বক্ষব্যাধি",
     hospital: "জাতীয় হৃদরোগ ইনস্টিটিউট, ঢাকা (প্রাক্তন)",
     experience: "অভিজ্ঞ হৃদরোগ বিশেষজ্ঞ",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785841295/femal1_soqy7d.jpg/",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785841295/femal1_soqy7d.jpg",
     chamberTime: "প্রতি মাসের ১ম ও ৩য় শুক্রবার (সকাল ৮:০০ - বিকাল ৫:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "অ্যাজমা, হৃদরোগ এবং বাতজ্বর চিকিৎসায় দীর্ঘদিনের অভিজ্ঞতা সম্পন্ন।"
@@ -51,7 +51,7 @@ export const doctorsData: Doctor[] = [
     department: "অর্থোপেডিকস",
     hospital: "ইউনাইটেড হাসপাতাল (সাবেক)",
     experience: "অভিজ্ঞ অর্থোপেডিক সার্জন",
-    image: "/images/doctors/default-male.jpg",
+   image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতি মাসের ১ম ও ৩য় শুক্রবার (সকাল ৮:০০ - বিকাল ৫:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "হাড় জোড়া, জয়েন্ট রিপ্লেসমেন্ট ও স্পাইনাল ইনজুরি চিকিৎসায় অভিজ্ঞ।"
@@ -65,7 +65,7 @@ export const doctorsData: Doctor[] = [
     department: "গ্যাস্ট্রোএন্টারোলজি ও মেডিসিন",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ মেডিসিন বিশেষজ্ঞ",
-    image: "/images/doctors/default-male.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতি মাসের ১ম ও ৩য় শুক্রবার (সকাল ৮:০০ - দুপুর ২:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "পাকস্থলী, লিভার ও মেডিসিন সংক্রান্ত জটিল রোগে অভিজ্ঞ চিকিৎসাস সেবা।"
@@ -79,7 +79,7 @@ export const doctorsData: Doctor[] = [
     department: "মেডিসিন",
     hospital: "২৫০ শয্যা বিশিষ্ট জেনারেল হাসপাতাল, বরগুনা",
     experience: "অভিজ্ঞ চিকিৎসক",
-    image: "/images/doctors/default-male.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতি সোমবার বিকাল ৪:০০ ও মঙ্গলবার সকাল ৮:০০ - দুপুর ৩:০০",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "সাধারণ ও জটিল মেডিসিন রোগীদের চিকিৎসায় সার্বক্ষণিক সেবা।"
@@ -93,7 +93,7 @@ export const doctorsData: Doctor[] = [
     department: "অর্থোপেডিকস",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ সার্জন",
-    image: "/images/doctors/default-male.jpg",
+  image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতি শুক্রবার (সকাল ৯:০০ - বিকাল ৫:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "হাড় ভাঙা, পঙ্গুত্ব ও বাত ব্যথার চিকিৎসায় অভিজ্ঞ সার্জন।"
@@ -107,7 +107,7 @@ export const doctorsData: Doctor[] = [
     department: "ইএনটি (নাক, কান, গলা)",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ সার্জন",
-    image: "/images/doctors/default-male.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতি শুক্রবার (সকাল ৯:০০ - দুপুর ৩:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "নাক, কান ও গলার যেকোনো জটিল চিকিৎসায় এবং হেড-নেক সার্জারিতে অভিজ্ঞ।"
@@ -121,7 +121,7 @@ export const doctorsData: Doctor[] = [
     department: "গাইনী ও আল্ট্রাসোনোগ্রাফি",
     hospital: "বরগুনা সদর হাসপাতাল, বরগুনা",
     experience: "অভিজ্ঞ আল্ট্রাসোনোলজিস্ট",
-    image: "/images/doctors/default-female.jpg",
+  image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতিদিন বৈকালিক চেম্বার (শুক্রবার সারাদিন)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "নারী স্বাস্থ্য, বন্ধ্যাত্ব চিকিৎসা এবং আধুনিক আল্ট্রাসোনোগ্রাফিতে অভিজ্ঞ।"
@@ -135,7 +135,7 @@ export const doctorsData: Doctor[] = [
     department: "মেডিসিন ও ডায়াবেটিস",
     hospital: "খুলনা মেডিকেল কলেজ হাসপাতাল, খুলনা",
     experience: "অভিজ্ঞ চিকিৎসক",
-    image: "/images/doctors/default-male.jpg",
+   image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "সোম ও মঙ্গলবার ব্যতিত প্রতিদিন (সকাল ৯:০০ - রাত ৮:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "ডায়াবেটিস, থাইরয়েড ও মেডিসিন সংক্রান্ত দীর্ঘমেয়াদী রোগের চিকিৎসায় অভিজ্ঞ।"
@@ -149,7 +149,7 @@ export const doctorsData: Doctor[] = [
     department: "গাইনী ও স্ত্রীরোগ",
     hospital: "আর্মি মেডিকেল কলেজ / আধুনিক মেডিকেল হাসপাতাল",
     experience: "অভিজ্ঞ চিকিৎসক",
-    image: "/images/doctors/default-female.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতিদিন (সন্ধ্যা ৪:০০ - রাত ৮:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "প্রসূতি সেবা, প্রসংাব পূর্ব ও পরবর্তী পরিচর্যা এবং স্ত্রীরোগ চিকিৎসায় নিবেদিত।"
@@ -163,7 +163,7 @@ export const doctorsData: Doctor[] = [
     department: "শিশু বিভাগ",
     hospital: "বরগুনা সদর হাসপাতাল",
     experience: "অভিজ্ঞ শিশু চিকিৎসক",
-    image: "/images/doctors/default-male.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতিদিন (সকাল ১০:০০ - ১:০০ ও বিকাল ৫:০০ - ৮:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "নবজাতক ও শিশুদের যেকোনো সাধারণ ও জটিল রোগের চিকিৎসায় যত্নশীল।"
@@ -177,7 +177,7 @@ export const doctorsData: Doctor[] = [
     department: "চর্ম ও যৌন",
     hospital: "বরগুনা",
     experience: "অভিজ্ঞ চর্মরোগ বিশেষজ্ঞ",
-    image: "/images/doctors/default-male.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতিদিন (বিকাল ৪:০০ - রাত ৮:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "চর্ম, যৌন সমস্যা ও এলার্জিজনিত রোগের আধুনিক চিকিৎসা প্রদান করেন।"
@@ -191,7 +191,7 @@ export const doctorsData: Doctor[] = [
     department: "মেডিসিন ও গাইনী",
     hospital: "আল্লাহ মালিক হাসপাতাল, বরগুনা",
     experience: "মেডিকেল অফিসার",
-    image: "/images/doctors/default-female.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
     chamberTime: "প্রতিদিন (সকাল ৯:০০ - দুপুর ২:০০)",
     phone: "০১৯৫০-২৫৮০২৫",
     about: "জরুরী ও সাধারণ রোগীদের প্রাথমিক এবং মেডিসিন চিকিৎসা প্রদান করেন।"

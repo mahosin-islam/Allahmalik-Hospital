@@ -28,7 +28,7 @@ const slides = [
     primaryBtnText: "ডাক্তারদের সময়সূচী",
     primaryBtnLink: "/doctors",
     image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1920&auto=format&fit=crop",
+      "https://res.cloudinary.com/rob9jlkw/image/upload/v1785992483/image.png_itjfw9.webp",
   },
   {
     id: 2,
@@ -37,9 +37,9 @@ const slides = [
     description:
       "মেডিসিন, গাইনি, সার্জারি ও শিশু বিশেষজ্ঞ চিকিৎসকদের চেম্বার এবং নিবিড় স্বাস্থ্য পর্যবেক্ষণের সুব্যবস্থা।",
     primaryBtnText: "বিভাগসমূহ দেখুন",
-    primaryBtnLink: "/departments",
+    primaryBtnLink: "/specialties/gynecology",
     image:
-      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1920&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1681966826227-d008a1cfe9c7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -110,7 +110,7 @@ export default function HeroSection() {
             />
 
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-slate-950/30 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-800/90 via-slate-800/70 to-slate-800/30 z-10" />
 
             {/* Content Container */}
             <div className="relative  z-20 container mx-auto px-4 sm:px-4 md:px-12 lg:px-16 xl:px-20 w-full h-full flex items-center justify-center ">
