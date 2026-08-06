@@ -53,7 +53,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 border border-slate-200 text-slate-700 rounded-xl text-sm font-semibold hover:bg-white hover:border-emerald-600 transition-all"
               >
                 <PhoneCall className="w-4 h-4 text-emerald-600" />
-                <span>হটলাইন: ০১৯৫০-২৫৮০২৫</span>
+                <span>হটলাইন: 01315848766</span>
               </a>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
           {/* Feature List */}
           <div className="space-y-6">
             <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block">
-              Our Key Features
+              Our Key Features hello mahosin
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-800">
               কেন আমাদের নির্বাচন করবেন?
