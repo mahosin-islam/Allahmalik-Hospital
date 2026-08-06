@@ -112,7 +112,7 @@ export default function AboutPage() {
           {/* Feature List */}
           <div className="space-y-6">
             <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block">
-              Our Key Features
+              Our Key Features hello mahosin
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-800">
               কেন আমাদের নির্বাচন করবেন?
