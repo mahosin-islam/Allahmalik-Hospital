@@ -36,10 +36,11 @@ export const metadata: Metadata = {
   publisher: "Allahmalik Hospital",
 icons: {
   icon: [
+    { url: "/favicon.ico" },
+    { url: "/icon.png", type: "image/png" },
     { url: "/icon.svg", type: "image/svg+xml" },
-    { url: "/icon.png", sizes: "96x96", type: "image/png" },
   ],
-  shortcut: "/icon.svg",
+  shortcut: "/favicon.ico",
   apple: "/icon.png",
 },
   openGraph: {
