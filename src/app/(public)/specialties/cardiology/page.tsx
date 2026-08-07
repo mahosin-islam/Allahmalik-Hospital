@@ -15,7 +15,7 @@ import {
 import { doctorsData } from "@/data/doctors";
 
 export const metadata: Metadata = {
-  title: "হৃদরোগ ও কার্ডিওলজি বিভাগ | Allahmalik Hospital Barguna",
+  title: "বরগুনা হৃদরোগ ও কার্ডিওলজি বিভাগ | Allahmalik Hospital Barguna",
   description:
     "বরগুনায় হার্ট অ্যাটাক, উচ্চ রক্তচাপ, বুক ব্যথা ও হৃদরোগের আধুনিক চিকিৎসাসেবা। অভিজ্ঞ কার্ডিওলজিস্ট ও ২৪/৭ ইসিজি, ইকো সুবিধা।",
   keywords: [

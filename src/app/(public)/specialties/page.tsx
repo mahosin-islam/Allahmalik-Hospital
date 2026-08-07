@@ -183,10 +183,10 @@ export default function SpecialtiesPage() {
             </p>
           </div>
           <a
-            href="tel:01950258025"
+            href="tel:01965-331717"
             className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl transition-all shrink-0 text-sm shadow-lg shadow-emerald-900/40"
           >
-            কল করুন: ০১৯৫০-২৫৮০২৫
+            কল করুন: 01965-331717
           </a>
         </div>
 

@@ -99,7 +99,7 @@ export default function OrthopedicsSpecialityPage() {
                 href="tel:01950258025"
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl transition-all text-sm backdrop-blur-md"
               >
-                জরুরি সিরিয়াল: ০১৯৫০-২৫৮০২৫
+                জরুরি সিরিয়াল: 01965-331717
               </a>
             </div>
           </div>

@@ -30,7 +30,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Department of Surgery",
     hospital: "শেখ হাসিনা জাতীয় বার্ন ও প্লাস্টিক সার্জারি ইনস্টিটিউট, ঢাকা",
     experience: "অভিজ্ঞ সার্জন",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786094830/Gemini_Generated_Image_6pslmx6pslmx6psl_nvzeyw.png",
     chamberTime: "বৃহস্পতি ও শুক্রবার সারাদিন এবং শনিবার দুপুর পর্যন্ত",
     phone: "01950258025",
     about: "জেনারেল, ল্যাপারোস্কোপিক এবং প্লাস্টিক সার্জারিতে বিশেষ প্রশিক্ষণপ্রাপ্ত।"
@@ -47,7 +47,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Cardiology & Chest Diseases",
     hospital: "জাতীয় হৃদরোগ ইনস্টিটিউট, ঢাকা (প্রাক্তন)",
     experience: "অভিজ্ঞ হৃদরোগ বিশেষজ্ঞ",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785841295/femal1_soqy7d.jpg",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786095236/Gemini_Generated_Image_bj7ogpbj7ogpbj7o_qzb6da.png",
     chamberTime: "প্রতি মাসের ১ম ও ৩য় শুক্রবার (সকাল ৮:০০ - বিকাল ৫:০০)",
     phone: "01950258025",
     about: "অ্যাজমা, হৃদরোগ এবং বাতজ্বর চিকিৎসায় দীর্ঘদিনের অভিজ্ঞতা সম্পন্ন।"
@@ -64,7 +64,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Orthopedics",
     hospital: "ইউনাইটেড হাসপাতাল (সাবেক)",
     experience: "অভিজ্ঞ অর্থোপেডিক সার্জন",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786096233/Gemini_Generated_Image_nnpmj2nnpmj2nnpm_epkt5s.png",
     chamberTime: "প্রতি মাসের ১ম ও ৩য় শুক্রবার (সকাল ৮:০০ - বিকাল ৫:০০)",
     phone: "01950258025",
     about: "হাড় জোড়া, জয়েন্ট রিপ্লেসমেন্ট ও স্পাইনাল ইনজুরি চিকিৎসায় অভিজ্ঞ।"
@@ -115,7 +115,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Orthopedics",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ সার্জন",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786095495/Gemini_Generated_Image_tt0xfdtt0xfdtt0x_ygypal.png",
     chamberTime: "প্রতি শুক্রবার (সকাল ৯:০০ - বিকাল ৫:০০)",
     phone: "01950258025",
     about: "হাড় ভাঙা, পঙ্গুত্ব ও বাত ব্যথার চিকিৎসায় অভিজ্ঞ সার্জন।"
@@ -132,7 +132,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "ENT (Ear, Nose, Throat)",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ সার্জন",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786096761/Screenshot_2026-08-07_155855_qx4n2l.png",
     chamberTime: "প্রতি শুক্রবার (সকাল ৯:০০ - দুপুর ৩:০০)",
     phone: "01950258025",
     about: "নাক, কান ও গলার যেকোনো জটিল চিকিৎসায় এবং হেড-নেক সার্জারিতে অভিজ্ঞ।"
@@ -149,7 +149,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Gynecology & Ultrasonography",
     hospital: "বরগুনা সদর হাসপাতাল, বরগুনা",
     experience: "অভিজ্ঞ আল্ট্রাসোনোলজিস্ট",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785841212/female3_quwoc5.webp",
     chamberTime: "প্রতিদিন বৈকালিক চেম্বার (শুক্রবার সারাদিন)",
     phone: "01950258025",
     about: "নারী স্বাস্থ্য, বন্ধ্যাত্ব চিকিৎসা এবং আধুনিক আল্ট্রাসোনোগ্রাফিতে অভিজ্ঞ।"
@@ -166,7 +166,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Medicine & Diabetes",
     hospital: "খুলনা মেডিকেল কলেজ হাসপাতাল, খুলনা",
     experience: "অভিজ্ঞ চিকিৎসক",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786096376/Gemini_Generated_Image_4oaj654oaj654oaj_o64vaa.png",
     chamberTime: "সোম ও মঙ্গলবার ব্যতিত প্রতিদিন (সকাল ৯:০০ - রাত ৮:০০)",
     phone: "01950258025",
     about: "ডায়াবেটিস, থাইরয়েড ও মেডিসিন সংক্রান্ত দীর্ঘমেয়াদী রোগের চিকিৎসায় অভিজ্ঞ।"
@@ -200,7 +200,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Pediatrics",
     hospital: "বরগুনা সদর হাসপাতাল",
     experience: "অভিজ্ঞ শিশু চিকিৎসক",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786097444/Screenshot_2026-08-07_161006_uh01es.png",
     chamberTime: "প্রতিদিন (সকাল ১০:০০ - ১:০০ ও বিকাল ৫:০০ - ৮:০০)",
     phone: "01950258025",
     about: "নবজাতক ও শিশুদের যেকোনো সাধারণ ও জটিল রোগের চিকিৎসায় যত্নশীল।"
@@ -234,7 +234,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Medicine & Gynecology",
     hospital: "আল্লাহ মালিক হাসপাতাল, বরগুনা",
     experience: "মেডিকেল অফিসার",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785841212/female3_quwoc5.webp",
     chamberTime: "প্রতিদিন (সকাল ৯:০০ - দুপুর ২:০০)",
     phone: "01950258025",
     about: "জরুরী ও সাধারণ রোগীদের প্রাথমিক এবং মেডিসিন চিকিৎসা প্রদান করেন।"

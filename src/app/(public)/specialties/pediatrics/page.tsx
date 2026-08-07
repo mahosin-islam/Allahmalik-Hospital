@@ -15,9 +15,9 @@ import {
 import { doctorsData } from "@/data/doctors";
 
 export const metadata: Metadata = {
-  title: "শিশু রোগ বিভাগ | Allahmalik Hospital Barguna",
+  title: "নবজাতক ও শিশুদের রোগ বরগুনায় | Allahmalik Hospital Barguna",
   description:
-    "বরগুনায় নবজাতক ও শিশুদের রোগ নির্ণয়, নিউমোニア, জন্ডিস, পুষ্টি ও সার্বিক শারীরিক বিকাশের চিকিৎসাসেবা। অভিজ্ঞ শিশু রোগ বিশেষজ্ঞগণ।",
+    "বরগুনায় নবজাতক ও শিশুদের রোগ নির্ণয়, নিউমোনিয়া, জন্ডিস, পুষ্টি ও সার্বিক শারীরিক বিকাশের চিকিৎসাসেবা। অভিজ্ঞ শিশু রোগ বিশেষজ্ঞগণ।",
   keywords: [
     "শিশু ডাক্তার বরগুনা",
     "Pediatrics Barguna",
@@ -99,7 +99,7 @@ export default function PediatricsSpecialityPage() {
                 href="tel:01950258025"
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl transition-all text-sm backdrop-blur-md"
               >
-                জরুরি সিরিয়াল: ০১৯৫০-২৫৮০২৫
+                জরুরি সিরিয়াল: 01965-331717
               </a>
             </div>
           </div>
