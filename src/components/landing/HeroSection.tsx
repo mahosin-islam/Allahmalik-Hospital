@@ -146,7 +146,7 @@ export default function HeroSection() {
                   </Link>
 
                   <a
-                    href="tel:+8801700000000"
+                    href="tel:+88001965-331717"
                     onClick={() => setIsEmergencyCalled(true)}
                     className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 md:px-8 py-3.5 sm:py-4 bg-slate-900/60 hover:bg-slate-900/80 text-white border border-white/20 rounded-xl text-sm sm:text-base font-semibold backdrop-blur-md transition-all focus:outline-none focus:ring-4 focus:ring-slate-300"
                   >

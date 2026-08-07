@@ -15,7 +15,7 @@ import {
 import { doctorsData } from "@/data/doctors";
 
 export const metadata: Metadata = {
-  title: "ই.এন.টি (কান, নাক ও গলা) বিভাগ | Allahmalik Hospital Barguna",
+ title: "বরগুনা নাক, কান ও গলা (ইএনটি) বিশেষজ্ঞ ডাক্তার | Allahmalik Hospital",
   description:
     "বরগুনায় কানের ব্যথা, শোনার সমস্যা, টনসিল, সাইনাস, গলার টিউমার ও নাক-কান-গলার আধুনিক চিকিৎসাসেবা। অভিজ্ঞ ই.এন.টি বিশেষজ্ঞ ও সার্জনগণ।",
   keywords: [

@@ -15,7 +15,7 @@ import {
 import { doctorsData } from "@/data/doctors";
 
 export const metadata: Metadata = {
-  title: "গাইনী ও স্ত্রীরোগ বিভাগ | Allahmalik Hospital Barguna",
+  title: "গাইনী ও স্ত্রীরোগ বিভাগ বরগুনায়| Allahmalik Hospital Barguna",
   description:
     "বরগুনায় প্রসূতি সেবা, নরমাল ডেলিভারি, জরায়ুর সমস্যা ও বন্ধ্যাত্ব চিকিৎসার নির্ভরযোগ্য প্রতিষ্ঠান। অভিজ্ঞ গাইনী সার্জন ও বিশেষজ্ঞ চিকিৎসকমণ্ডলী।",
   keywords: [
@@ -96,7 +96,7 @@ export default function GynecologySpecialityPage() {
                 href="tel:01950258025"
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl transition-all text-sm backdrop-blur-md"
               >
-                জরুরি সিরিয়াল: ০১৯৫০-২৫৮০২৫
+                জরুরি সিরিয়াল: 01965-331717
               </a>
             </div>
           </div>

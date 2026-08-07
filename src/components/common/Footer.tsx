@@ -125,6 +125,9 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Rights */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} Allahmalik Hospital & Diagnostic Center. All Rights Reserved.</p>
+            <a href="https://mahosin-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+              Developed by Mahoisn
+            </a>
           <p className="flex items-center gap-1">
             Carefully Designed & Built with <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500" /> for Better Healthcare.
           </p>

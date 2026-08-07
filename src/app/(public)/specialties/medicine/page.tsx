@@ -15,7 +15,7 @@ import {
 import { doctorsData } from "@/data/doctors";
 
 export const metadata: Metadata = {
-  title: "মেডিসিন ও ইন্টারনাল মেডিসিন বিভাগ | Allahmalik Hospital Barguna",
+  title: "মেডিসিন ও ইন্টারনাল মেডিসিন বিভাগ রগুনায় | Allahmalik Hospital Barguna",
   description:
     "বরগুনায় সাধারণ ও জটিল শারীরিক রোগ, ডায়াবেটিস, প্রেশার, জ্বর ও দীর্ঘমেয়াদী রোগের আধুনিক চিকিৎসাসেবা। অভিজ্ঞ মেডিসিন বিশেষজ্ঞগণ।",
   keywords: [
@@ -95,10 +95,10 @@ export default function MedicineSpecialityPage() {
                 ডাক্তার নির্বাচন করুন
               </a>
               <a
-                href="tel:01950258025"
+                href="tel:01965-331717"
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl transition-all text-sm backdrop-blur-md"
               >
-                জরুরি সিরিয়াল: ০১৯৫০-২৫৮০২৫
+                জরুরি সিরিয়াল: 01965-331717
               </a>
             </div>
           </div>

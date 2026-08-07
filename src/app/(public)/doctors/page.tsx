@@ -5,7 +5,7 @@ import DoctorsClient from "@/components/doctors/DoctorsClient";
 const siteUrl = "https://www.allahmalik-hospital.com";
 
 export const metadata: Metadata = {
-  title: "Doctor List & Serial Number | Allah Malik Hospital Barguna",
+ title: "বরগুনা ডাক্তার তালিকা ও সিরিয়াল | Doctor List - Allahmalik Hospital",
   description:
     "আল্লাহ মালিক হাসপাতাল বরগুনার সকল বিশেষজ্ঞ ডাক্তারের তালিকা, চেম্বার সময়সূচি ও সিরিয়াল নম্বর পেতে ভিজিট করুন। Book doctor appointments online.",
   keywords: [
