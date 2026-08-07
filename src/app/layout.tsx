@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.allahmalik-hospital.com"),
   title: {
-    default: "Allahmalik Hospital | Diagnostic & Medical Services in Barguna",
+  default: "Allahmalik Hospital Barguna | আল্লাহ মালিক হাসপাতাল বরগুনা",
     template: "%s | Allahmalik Hospital Barguna",
   },
   description:
@@ -34,11 +34,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Allahmalik Hospital" }],
   publisher: "Allahmalik Hospital",
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
+icons: {
+  icon: [
+    { url: "/icon.svg", type: "image/svg+xml" },
+    { url: "/icon.png", sizes: "96x96", type: "image/png" },
+  ],
+  shortcut: "/icon.svg",
+  apple: "/icon.png",
+},
   openGraph: {
     title: "Allahmalik Hospital Barguna | Trusted Healthcare Partner",
     description:
