@@ -155,7 +155,7 @@ export default function HeroSection() {
                         !isEmergencyCalled ? "animate-pulse" : ""
                       }`}
                     />
-                    <span>জরুরি যোগাযোগ: ০১৭০০-০০০০০০</span>
+                    <span>জরুরি যোগাযোগ: 01965-331717</span>
                   </a>
                 </div>
 
