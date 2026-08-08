@@ -2,9 +2,9 @@ import { Doctor } from "@/types/doctor";
 
 export const doctorsData: Doctor[] = [
   {
-    id: "dr-aliuzzaman",
-    name: "ডাঃ আলিউজ্জামান",
-    nameEn: "Dr. Aliuzzaman",
+    id: "dr-Oli-ullah",
+    name: "ডাঃ অলিউল্লাহ",
+    nameEn: "Dr.  Oli ullah",
     qualification: "এমবিবিএস, ডিডিভি (চর্ম ও যৌন)",
     speciality: "চর্ম, যৌন ও এলার্জি রোগ বিশেষজ্ঞ",
     specialityEn: "Dermatologist & Venereologist",
@@ -69,6 +69,23 @@ export const doctorsData: Doctor[] = [
   phone: "01950258025",
   about: "হৃদরোগ, বক্ষব্যাধি, মেডিসিন ও ডায়াবেটিস সংক্রান্ত জটিল রোগের চিকিৎসায় অভিজ্ঞ। ডাক্তার সাহেব নিজ হাতে ইকো কারডিওগ্রাফি করেন।"
 },
+{
+  id: "dr-md-fahad-hossen",
+  name: "ডাঃ মোঃ ফাহাদ হোসেন",
+  nameEn: "Dr. Md. Fahad Hossen",
+  qualification: "এমবিবিএস (ঢাকা), বিসিএস (স্বাস্থ্য), এফসিপিএস (মেডিসিন, ফাইনাল পার্ট), এমডি (রিউমাটোলজি) বিএসএমএমইউ, ই সি আর ডি (সুইজারল্যান্ড), সিসিডি (বারডেম)",
+  speciality: "মেডিসিন, ডায়াবেটিস, বাত ব্যথা, বাতজ্বর, হাড় ক্ষয়, আর্থ্রাইটিস বিশেষজ্ঞ",
+  specialityEn: "Medicine, Diabetes, Rheumatic Fever & Rheumatology Specialist",
+  designation: "ইউরোপিয়ান সার্টিফাইড রিউমাটোলজিস্ট",
+  department: "মেডিসিন ও রিউমাটোলজি",
+  departmentEn: "Medicine & Rheumatology",
+  hospital: "বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয় (পিজি হাসপাতাল), ঢাকা",
+  experience: "অভিজ্ঞ মেডিসিন ও রিউমাটোলজি বিশেষজ্ঞ",
+  image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786161370/WhatsApp_Image_2026-08-08_at_09.46.22_wuzmru.jpg",
+  chamberTime: "প্রতি শুক্রবার (সকাল ৯:০০ - দুপুর ২:০০)",
+  phone: "01950258025",
+  about: "মেডিসিন, ডায়াবেটিস, বাত ব্যথা, আর্থ্রাইটিস, হাড় ক্ষয় ও রিউমাটোলজি সংক্রান্ত রোগের আধুনিক চিকিৎসায় অভিজ্ঞ।"
+},
  {
   id: "dr-mostafizur-rahman-sajol",
   name: "ডাঃ মোস্তাফিজুর রহমান (সজল)",
@@ -122,7 +139,7 @@ export const doctorsData: Doctor[] = [
 },
  {
   id: "dr-md-akib-javed-sawan",
-  name: "ডাঃ মোঃ আকিব জাবেদ (সাওন)",
+  name: "ডাঃ মোঃ আকিব জাবেদ (শাওন)",
   nameEn: "Dr. Md. Akib Javed Sawan",
   qualification: "এমবিবিএস (ডিইউ), বিসিএস (স্বাস্থ্য), ডিএলও (বিএসএমএমইউ)",
   speciality: "নাক-কান-গলা, থাইরয়েড বিশেষজ্ঞ ও হেড নেক সার্জন",
@@ -154,23 +171,6 @@ export const doctorsData: Doctor[] = [
   phone: "01950258025",
   about: "মেডিসিন, ডায়াবেটিকস, শ্বাসকষ্ট ও বাতব্যথা জনিত রোগে অভিজ্ঞ চিকিৎসক।"
 },
-  {
-    id: "dr-farhana-rahman-sumi",
-    name: "ডাঃ ফারহানা রহমান (সুমী)",
-    nameEn: "Dr. Farhana Rahman Sumi",
-    qualification: "এমবিবিএস, ডিএমইউ (আর্মি), পিজিটি (গাইনী এন্ড অব্স)",
-    speciality: "গাইনী, স্ত্রীরোগ চিকিৎসক ও সার্জন",
-    specialityEn: "Gynecology & Obstetrics Specialist",
-    designation: "অভিজ্ঞ মেডিকেল অফিসার",
-    department: "গাইনী ও স্ত্রীরোগ",
-    departmentEn: "Gynecology & Obstetrics",
-    hospital: "আর্মি মেডিকেল কলেজ / আধুনিক মেডিকেল হাসপাতাল",
-    experience: "অভিজ্ঞ চিকিৎসক",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
-    chamberTime: "প্রতিদিন (সন্ধ্যা ৪:০০ - রাত ৮:০০)",
-    phone: "01950258025",
-    about: "প্রসূতি সেবা, প্রসংাব পূর্ব ও পরবর্তী পরিচর্যা এবং স্ত্রীরোগ চিকিৎসায় নিবেদিত।"
-  },
 
 {
   id: "dr-mashiur-rahman",
@@ -206,6 +206,24 @@ export const doctorsData: Doctor[] = [
   phone: "01965331717",
   about: "জেনারেল সার্জারী, ব্রেস্ট, কলোরেক্টাল ও ল্যাপারোস্কোপিক সার্জারিতে বিশেষ অভিজ্ঞ সার্জন।"
 },
+  {
+    id: "dr-farhana-rahman-sumi",
+    name: "ডাঃ ফারহানা রহমান (সুমী)",
+    nameEn: "Dr. Farhana Rahman Sumi",
+    qualification: "এমবিবিএস, ডিএমইউ (আর্মি), পিজিটি (গাইনী এন্ড অব্স)",
+    speciality: "গাইনী, স্ত্রীরোগ চিকিৎসক ও সার্জন",
+    specialityEn: "Gynecology & Obstetrics Specialist",
+    designation: "অভিজ্ঞ মেডিকেল অফিসার",
+    department: "গাইনী ও স্ত্রীরোগ",
+    departmentEn: "Gynecology & Obstetrics",
+    hospital: "আর্মি মেডিকেল কলেজ / আধুনিক মেডিকেল হাসপাতাল",
+    experience: "অভিজ্ঞ চিকিৎসক",
+    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    chamberTime: "প্রতিদিন (সন্ধ্যা ৪:০০ - রাত ৮:০০)",
+    phone: "01950258025",
+    about: "প্রসূতি সেবা, প্রসংাব পূর্ব ও পরবর্তী পরিচর্যা এবং স্ত্রীরোগ চিকিৎসায় নিবেদিত।"
+  },
+
   {
     id: "dr-mehedi-parvez",
     name: "ডাঃ মেহেদী পারভেজ",
