@@ -21,25 +21,25 @@ export default function Navbar() {
   // 🟢 Active path ট্র্যাক করার জন্য usePathname Hook
   const pathname = usePathname();
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Doctors", href: "/doctors" },
-    {
-      name: "Specialties",
-      hasDropdown: true,
-      subItems: [
-        { name: "Gynecology & Obstetrics", href: "/specialties/gynecology" },
-        { name: "Orthopedics & Trauma", href: "/specialties/orthopedics" },
-        { name: "Cardiology", href: "/specialties/cardiology" },
-        { name: "Gastroenterology", href: "/specialties/gastroenterology" },
-        { name: "Medicine & Diabetology", href: "/specialties/medicine" },
-        { name: "Pediatrics & Neonatology", href: "/specialties/pediatrics" },
-        { name: "ENT (Ear, Nose, Throat)", href: "/specialties/ent" },
-      ],
-    },
-    { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
+const navLinks = [
+  { name: "হোম", href: "/" },
+  { name: "ডাক্তার তালিকা", href: "/doctors" },
+  {
+    name: "চিকিৎসা বিভাগ",
+    hasDropdown: true,
+    subItems: [
+      { name: "গাইনী ও প্রসূতি রোগ", href: "/specialties/gynecology" },
+      { name: "হাড়-ভাঙা ও অর্থোপেডিক্স", href: "/specialties/orthopedics" },
+      { name: "হৃদরোগ (কার্ডিওলজি)", href: "/specialties/cardiology" },
+      { name: "পাকস্থলী ও লিভার রোগ", href: "/specialties/gastroenterology" },
+      { name: "মেডিসিন ও ডায়াবেটিস", href: "/specialties/medicine" },
+      { name: "শিশু ও নবজাতক রোগ", href: "/specialties/pediatrics" },
+      { name: "নাক, কান ও গলা (ইএনটি)", href: "/specialties/ent" },
+    ],
+  },
+  { name: "আমাদের সম্পর্কে", href: "/about" },
+  { name: "যোগাযোগ", href: "/contact" },
+];
 
   const toggleMobileDropdown = (name: string) => {
     setMobileDropdownOpen(mobileDropdownOpen === name ? null : name);
