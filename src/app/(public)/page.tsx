@@ -8,29 +8,25 @@ import Testimonials from '@/components/landing/Testimonials';
 import PartnerReadiness from '@/components/landing/PartnerReadiness';
 
 export const metadata: Metadata = {
-  title: 'Allah Malik Hospital | Best Doctor in Barguna - বরগুনার সেরা ডাক্তার',
-  description: 'বরগুনার সেরা বিশেষজ্ঞ ডাক্তারদের তালিকা ও অনলাইন সিরিয়াল বুকিং। আল্লাহ মালিক হাসপাতাল বরগুনা - মেডিসিন, গাইনী, শিশু, ইএনটি ও নিউরো বিশেষজ্ঞ। Call: 01965-331717',
+  title: {
+    absolute: 'Allah Malik Hospital | Barguna Private Hospital - বরগুনা বেসরকারি হাসপাতাল',
+  },
+  description: 'বরগুনার সেরা প্রাইভেট হাসপাতাল ও ডায়াগনস্টিক সেন্টার। ২৪ ঘণ্টা জরুরি সেবা, অভিজ্ঞ বিশেষজ্ঞ ডাক্তার ও আধুনিক প্যাথলজি সেবা। আল্লাহ মালিক হাসপাতাল বরগুনা। Call: 01965-331717',
   keywords: [
-    'Best Doctor in Barguna',
-    'বরগুনার সেরা ডাক্তার',
-    'বরগুনা ভালো ডাক্তার',
-    'Barguna Doctor List',
-    'বরগুনা বিশেষজ্ঞ ডাক্তার তালিকা',
+    // Private Hospital Search Keywords
+    'Barguna Private Hospital',
+    'Private Hospital in Barguna',
+    'বরগুনা প্রাইভেট হাসপাতাল',
+    'বরগুনা বেসরকারি হাসপাতাল',
+    'বরগুনা প্রাইভেট হাসপাতাল তালিকা',
+    'Barguna Hospital List',
+    'বরগুনা হাসপাতাল',
+    'Best Hospital in Barguna',
     'Allah Malik Hospital Barguna',
     'আল্লাহ মালিক হাসপাতাল বরগুনা',
-    'বরগুনা ডাক্তার সিরিয়াল',
-    'Best Hospital in Barguna',
   ],
   alternates: {
-    canonical: 'https://www.allahmalik-hospital.com',
-  },
-  openGraph: {
-    title: 'Allah Malik Hospital | Best Doctor in Barguna - বরগুনার সেরা ডাক্তার',
-    description: 'বরগুনার সেরা বিশেষজ্ঞ ডাক্তারদের পরামর্শ ও দ্রুত সিরিয়ালের জন্য যোগাযোগ করুন।',
-    url: 'https://www.allahmalik-hospital.com',
-    siteName: 'Allah Malik Hospital Barguna',
-    locale: 'bn_BD',
-    type: 'website',
+    canonical: '/',
   },
 };
 

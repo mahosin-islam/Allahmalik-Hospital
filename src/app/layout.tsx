@@ -15,11 +15,13 @@ export const metadata: Metadata = {
   },
   description:
     "আল্লাহ মালিক হাসপাতাল ও ডায়াগনস্টিক সেন্টার, বরগুনা। ২৪/৭ জরুরি চিকিৎসা সেবা, বিশেষজ্ঞ ডাক্তার পরামর্শ এবং আধুনিক প্যাথলজি সেবা। Allahmalik Hospital Barguna.",
-  keywords: [
+
+keywords: [
     // English Keywords
     "Allahmalik Hospital",
     "Allahmalik Hospital Barguna",
     "Best hospital in Barguna",
+    "Barguna Private Hospital",
     "Diagnostic Center Barguna",
     "Pathology Center Barguna",
     "Doctor list Barguna",
@@ -28,10 +30,13 @@ export const metadata: Metadata = {
     "আল্লাহ মালিক হাসপাতাল",
     "আল্লাহ মালিক হাসপাতাল বরগুনা",
     "বরগুনা হাসপাতাল",
+    "বরগুনা প্রাইভেট হাসপাতাল",
+    "বরগুনা বেসরকারি হাসপাতাল",
     "বরগুনা ডায়াগনস্টিক সেন্টার",
     "বরগুনা ডাক্তার তালিকা",
     "বরগুনার সেরা হাসপাতাল",
   ],
+
   authors: [{ name: "Allahmalik Hospital" }],
   publisher: "Allahmalik Hospital",
 icons: {
