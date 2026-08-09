@@ -104,7 +104,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
                 <a href="tel:+8801965331717" className="hover:text-emerald-400 transition-colors">
-                  1965-331717 | 01950-258025
+                  01965-331717 | 01950-258025
                 </a>
               </li>
                

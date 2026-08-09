@@ -70,6 +70,23 @@ export const doctorsData: Doctor[] = [
   about: "হৃদরোগ, বক্ষব্যাধি, মেডিসিন ও ডায়াবেটিস সংক্রান্ত জটিল রোগের চিকিৎসায় অভিজ্ঞ। ডাক্তার সাহেব নিজ হাতে ইকো কারডিওগ্রাফি করেন।"
 },
 {
+  id: "dr-mehedi-parvez",
+  name: "ডাঃ মেহেদী পারভেজ",
+  nameEn: "Dr. Mehedi Parvez",
+  qualification: "এমবিবিএস, এফসিপিএস (শিশু), ডিএইচসি (শিশু বিভাগ)",
+  speciality: "শিশু রোগ বিশেষজ্ঞ",
+  specialityEn: "Pediatrician & Child Specialist",
+  designation: "সহকারী অধ্যাপক (শিশু বিভাগ)",
+  department: "শিশু বিভাগ",
+  departmentEn: "Pediatrics",
+  hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
+  experience: "অভিজ্ঞ শিশু বিশেষজ্ঞ ও সহকারী অধ্যাপক",
+  image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786281360/Gemini_Generated_Image_nfnpptnfnpptnfnp_krm4xi.png",
+  chamberTime: "প্রতি শুক্রবার (সকাল ১০:০০ - রাত ১০:০০) এবং শনি, সোম ও বুধবার (বিকাল ৪:০০ - রাত ১০:০০)",
+  phone: "01950258025",
+  about: "নবজাতক ও শিশুদের যেকোনো সাধারণ ও জটিল রোগের চিকিৎসায় যত্নশীল।"
+},
+{
   id: "dr-md-fahad-hossen",
   name: "ডাঃ মোঃ ফাহাদ হোসেন",
   nameEn: "Dr. Md. Fahad Hossen",
@@ -224,24 +241,6 @@ export const doctorsData: Doctor[] = [
     about: "প্রসূতি সেবা, প্রসংাব পূর্ব ও পরবর্তী পরিচর্যা এবং স্ত্রীরোগ চিকিৎসায় নিবেদিত।"
   },
 
-  {
-    id: "dr-mehedi-parvez",
-    name: "ডাঃ মেহেদী পারভেজ",
-    nameEn: "Dr. Mehedi Parvez",
-    qualification: "এমবিবিএস, ডিএইচসি (শিশু বিভাগ)",
-    speciality: "শিশু রোগ বিশেষজ্ঞ",
-    specialityEn: "Pediatrician & Child Specialist",
-    designation: "শিশু রোগ বিশেষজ্ঞ",
-    department: "শিশু বিভাগ",
-    departmentEn: "Pediatrics",
-    hospital: "বরগুনা সদর হাসপাতাল",
-    experience: "অভিজ্ঞ শিশু চিকিৎসক",
-      image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
-   
-    chamberTime: "প্রতিদিন (সকাল ১০:০০ - ১:০০ ও বিকাল ৫:০০ - ৮:০০)",
-    phone: "01950258025",
-    about: "নবজাতক ও শিশুদের যেকোনো সাধারণ ও জটিল রোগের চিকিৎসায় যত্নশীল।"
-  },
   {
     id: "dr-farhana-easmin-liya",
     name: "ডাঃ ফারহানা ইয়াসমিন লিয়া",
