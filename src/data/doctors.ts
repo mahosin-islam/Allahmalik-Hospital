@@ -235,7 +235,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Gynecology & Obstetrics",
     hospital: "আর্মি মেডিকেল কলেজ / আধুনিক মেডিকেল হাসপাতাল",
     experience: "অভিজ্ঞ চিকিৎসক",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1785840964/doctors1-removebg-preview_tlueof.png",
+    image: "",
     chamberTime: "প্রতিদিন (সন্ধ্যা ৪:০০ - রাত ৮:০০)",
     phone: "01950258025",
     about: "প্রসূতি সেবা, প্রসংাব পূর্ব ও পরবর্তী পরিচর্যা এবং স্ত্রীরোগ চিকিৎসায় নিবেদিত।"
@@ -253,7 +253,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Medicine & Gynecology",
     hospital: "আল্লাহ মালিক হাসপাতাল, বরগুনা",
     experience: "মেডিকেল অফিসার",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786131341/Screenshot_2026-08-08_013136-removebg-preview_nblccj.png",
+    image: "",
     chamberTime: "প্রতিদিন (সকাল ৯:০০ - দুপুর ২:০০)",
     phone: "01950258025",
     about: "জরুরী ও সাধারণ রোগীদের প্রাথমিক এবং মেডিসিন চিকিৎসা প্রদান করেন।"
@@ -270,7 +270,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Gynecology & Ultrasonography",
     hospital: "বরগুনা সদর হাসপাতাল, বরগুনা",
     experience: "অভিজ্ঞ আল্ট্রাসোনোলজিস্ট",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786131299/Screenshot_2026-08-08_013127-removebg-preview_geooz3.png",
+    image: "",
     chamberTime: "প্রতিদিন বৈকালিক চেম্বার (শুক্রবার সারাদিন)",
     phone: "01950258025",
     about: "নারী স্বাস্থ্য, বন্ধ্যাত্ব চিকিৎসা এবং আধুনিক আল্ট্রাসোনোগ্রাফিতে অভিজ্ঞ।"
@@ -287,7 +287,7 @@ export const doctorsData: Doctor[] = [
     departmentEn: "Gynecology & Obstetrics",
     hospital: "শের-ই-বাংলা মেডিকেল কলেজ ও হাসপাতাল, বরিশাল",
     experience: "অভিজ্ঞ বিশেষজ্ঞ",
-    image: "https://res.cloudinary.com/rob9jlkw/image/upload/v1786131252/Screenshot_2026-08-08_012909-removebg-preview_sjjfrl.png",
+   image: "", // অথবা image: null
     chamberTime: "প্রতি শুক্রবার (সকাল ৮:০০ - বিকাল ৪:০০)",
     phone: "01950258025",
     about: "গাইনী ও স্ত্রীরোগ চিকিৎসায় অভিজ্ঞ বিশেষজ্ঞ ও সার্জন।"
