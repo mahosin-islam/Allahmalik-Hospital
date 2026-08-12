@@ -134,25 +134,39 @@ export default async function DoctorDetailPage({ params }: PageProps) {
           <div className="p-5 sm:p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
             
             {/* Left Column: Image & Verification */}
-            <div className="md:col-span-5 relative">
-              <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-800">
-                <Image
-                  src={doctor.image}
-                  alt={`${doctor.name} - ${doctor.speciality} বরগুনা`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-              <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-800/40 flex items-center gap-3">
-                <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600 shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-300">যাচাইকৃত বিশেষজ্ঞ</p>
-                  <p className="text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-400">আল্লাহ মালিক হাসপাতালে নিয়মিত চেম্বার করছেন</p>
+
+        <div className="md:col-span-5 relative">
+          <div className="relative h-72 sm:h-80 md:h-96 w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-800">
+            {doctor.image ? (
+           <Image
+  src={doctor.image}
+  alt={`${doctor.name} - ${doctor.speciality} বরগুনা`}
+  fill
+  sizes="(max-width: 768px) 100vw, 40vw"
+  className="object-cover object-top"
+  priority
+/>
+            ) : (
+              /* 🎨 Image null/খালি হলে Gradient Shape & Stethoscope Icon */
+              <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-slate-200 dark:to-slate-800 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-emerald-500/15 blur-3xl" />
+                <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-teal-500/15 blur-3xl" />
+                
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-emerald-500/20 shadow-2xl flex items-center justify-center z-10">
+                  <Stethoscope className="w-12 h-12 sm:w-14 sm:h-14 text-emerald-600 dark:text-emerald-400" />
                 </div>
               </div>
+            )}
+          </div>
+
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-800/40 flex items-center gap-3">
+            <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600 shrink-0" />
+            <div>
+              <p className="text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-300">যাচাইকৃত বিশেষজ্ঞ</p>
+              <p className="text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-400">আল্লাহ মালিক হাসপাতালে নিয়মিত চেম্বার করছেন</p>
             </div>
+          </div>
+        </div>
 
             {/* Right Column: Info & Appointment Section */}
             <div className="md:col-span-7 space-y-5 sm:space-y-6">

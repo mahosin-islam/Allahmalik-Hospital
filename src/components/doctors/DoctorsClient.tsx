@@ -41,8 +41,8 @@ export default function DoctorsClient({ doctorsData }: DoctorsClientProps) {
     })),
   };
 
-  return (
-    <main className="py-10 sm:py-15 lg:py-20  dark:bg-slate-900/40 w-full overflow-hidden transition-colors duration-300 relative">
+return (
+    <main className="py-10 sm:py-15 lg:py-20 dark:bg-slate-900/40 w-full overflow-hidden transition-colors duration-300 relative">
       {/* JSON-LD Schema Injection */}
       <script
         type="application/ld+json"
@@ -66,21 +66,37 @@ export default function DoctorsClient({ doctorsData }: DoctorsClientProps) {
         </header>
 
         {/* Doctors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
           {doctorsData.map((doctor) => (
             <article
               key={doctor.id}
-              className="bg-white dark:bg-card rounded-2xl overflow-hidden border border-slate-200/80 dark:border-border/60  transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+              className="bg-white dark:bg-card rounded-2xl overflow-hidden border border-slate-200/80 dark:border-border/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-sm hover:shadow-md"
             >
               <div>
+                {/* 🔴 Image / Shape Container Section */}
                 <div className="relative aspect-[4/3] sm:aspect-[16/13] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-                  <Image
-                    src={doctor.image}
-                    alt={`${doctor.name} - ${doctor.speciality}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+                  {doctor.image ? (
+                    <Image
+                      src={doctor.image}
+                      alt={`${doctor.name} - ${doctor.speciality}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  ) : (
+                    /* 🎨 Image না থাকলে প্রফেশনাল Gradient Shape & Icon UI */
+                    <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-slate-200 dark:to-slate-800 flex items-center justify-center relative overflow-hidden">
+                      {/* Abstract Background Shapes */}
+                      <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-emerald-500/15 blur-2xl" />
+                      <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-teal-500/15 blur-2xl" />
+                      
+                      {/* Icon Card */}
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-emerald-500/20 shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 z-10">
+                        <Stethoscope className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                    </div>
+                  )}
+
                   {doctor.department && (
                     <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-10">
                       {doctor.department}
@@ -116,9 +132,9 @@ export default function DoctorsClient({ doctorsData }: DoctorsClientProps) {
               </div>
 
               <div className="p-5 pt-0">
-                 <Link
+                <Link
                   href={`/doctors/${doctor.id}`}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4  bg-emerald-600 text-white  dark:bg-slate-700/60 dark:hover:bg-emerald-600 dark:text-slate-200 rounded-xl font-medium text-xs transition-all duration-200 group/btn"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-emerald-600 text-white dark:bg-slate-700/60 dark:hover:bg-emerald-600 dark:text-slate-200 rounded-xl font-medium text-xs transition-all duration-200 group/btn"
                 >
                   <span>বিস্তারিত দেখুন</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
