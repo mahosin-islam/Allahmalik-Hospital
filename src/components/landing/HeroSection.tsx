@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import {
   Play,
   Pause,
@@ -11,181 +11,216 @@ import {
   Maximize,
 } from "lucide-react";
 
-// Video Links Array
 const videos = [
   {
     id: "v1",
+    title: "বাতব্যথা, স্ট্রোক ও প্যারালাইসিস চিকিৎসা",
     url: "https://res.cloudinary.com/rob9jlkw/video/upload/v1786674529/7c974cf8-62c3-4030-ab9b-a92c979e0f5d_iptwpr.mp4",
   },
   {
     id: "v2",
+    title: "বিশেষজ্ঞ চিকিৎসকের পরামর্শ ও সেবা",
     url: "https://res.cloudinary.com/rob9jlkw/video/upload/v1786674505/41fbb110-7c8e-466d-96be-696f3746f1a7_feqwzh.mp4",
   },
   {
     id: "v3",
+    title: "আল্লাহ মালিক হাসপাতাল ও ডায়াগনস্টিক সেন্টার",
     url: "https://res.cloudinary.com/rob9jlkw/video/upload/v1786674470/e74f137b-87ea-4dac-a219-d632049b5dd8_bqxqkd.mp4",
-  },
-  {
-    id: "v4",
-    url: "https://res.cloudinary.com/rob9jlkw/video/upload/v1786673132/Doc_Fahad_Hossain_mhbnqh.mp4",
   },
 ];
 
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true); // Default Muted for seamless Browser Autoplay
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [needsSoundTap, setNeedsSoundTap] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const wasPlayingBeforeLeave = useRef(false);
+  const wasMutedBeforeLeave = useRef(false);
 
-  // 🟢 1. Auto-Play Logic & Mute Sync
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = isMuted;
-      const playPromise = videoRef.current.play();
+  // Try autoplay WITH sound first; fallback to muted autoplay if blocked
+  const attemptAutoplay = useCallback(async () => {
+    const video = videoRef.current;
+    if (!video) return;
 
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {
-            if (videoRef.current) {
-              videoRef.current.muted = true;
-              setIsMuted(true);
-              videoRef.current.play();
-            }
-          });
+    try {
+      video.muted = false;
+      await video.play();
+      setIsMuted(false);
+      setIsPlaying(true);
+      setNeedsSoundTap(false);
+    } catch {
+      try {
+        video.muted = true;
+        await video.play();
+        setIsMuted(true);
+        setIsPlaying(true);
+        setNeedsSoundTap(true);
+      } catch {
+        setIsPlaying(false);
       }
     }
-  }, [currentIndex, isMuted]);
+  }, []);
 
-  // 🟢 2. Enable Sound on First User Interaction Anywhere on Page
+  // Autoplay on mount
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      if (videoRef.current && isMuted) {
-        videoRef.current.muted = false;
+    attemptAutoplay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Autoplay on slide change (only if section is currently visible)
+  useEffect(() => {
+    if (isInView) attemptAutoplay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
+  // Enable sound on first user interaction
+  useEffect(() => {
+    if (!needsSoundTap) return;
+
+    const enableSound = () => {
+      const video = videoRef.current;
+      if (video) {
+        video.muted = false;
         setIsMuted(false);
       }
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
+      setNeedsSoundTap(false);
     };
 
-    window.addEventListener("click", handleFirstInteraction, { once: true });
-    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+    const section = sectionRef.current;
+    section?.addEventListener("click", enableSound, { once: true });
 
     return () => {
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
+      section?.removeEventListener("click", enableSound);
     };
-  }, [isMuted]);
+  }, [needsSoundTap]);
 
-  // 🟢 3. Scroll Out-of-View Pause Mechanism
+  // 🟢 Intersection Observer: pause + mute when scrolled out of view,
+  // resume with previous state when scrolled back into view
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !videoRef.current) return;
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const isOutOfView = rect.bottom <= 100 || rect.top >= window.innerHeight;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Section back in view -> restore previous state
+          setIsInView(true);
+          if (wasPlayingBeforeLeave.current) {
+            video.muted = wasMutedBeforeLeave.current;
+            setIsMuted(wasMutedBeforeLeave.current);
+            video.play().catch(() => {});
+            setIsPlaying(true);
+          }
+        } else {
+          // Section scrolled away -> remember state, then pause + mute
+          setIsInView(false);
+          wasPlayingBeforeLeave.current = !video.paused;
+          wasMutedBeforeLeave.current = video.muted;
 
-      if (isOutOfView) {
-        if (!videoRef.current.paused) {
-          videoRef.current.pause();
+          video.pause();
+          video.muted = true;
+          setIsMuted(true);
           setIsPlaying(false);
         }
-      } else {
-        if (videoRef.current.paused && isPlaying) {
-          videoRef.current.play().catch(() => {});
-          setIsPlaying(true);
-        }
-      }
-    };
+      },
+      { threshold: 0.4 } // considers "in view" once 40% of section is visible
+    );
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isPlaying]);
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
-  // Update progress bar
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      const current = videoRef.current.currentTime;
-      const total = videoRef.current.duration;
-      if (total > 0) {
-        setProgress((current / total) * 100);
-      }
-    }
-  };
-
-  // Toggle Play / Pause
   const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        videoRef.current.play();
-        setIsPlaying(true);
-      }
+    const video = videoRef.current;
+    if (!video) return;
+    if (isPlaying) {
+      video.pause();
+      setIsPlaying(false);
+    } else {
+      video.play();
+      setIsPlaying(true);
     }
   };
 
-  // Toggle Mute / Unmute
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const nextMuteState = !isMuted;
-      videoRef.current.muted = nextMuteState;
-      setIsMuted(nextMuteState);
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (video && video.duration > 0) {
+      setProgress((video.currentTime / video.duration) * 100);
     }
   };
 
-  // Slide Controls
-  const handleNext = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    const next = !isMuted;
+    video.muted = next;
+    setIsMuted(next);
+    if (!next) setNeedsSoundTap(false);
+  };
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     setCurrentIndex((prev) => (prev + 1) % videos.length);
   };
 
-  const handlePrev = () => {
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
-  // Fullscreen Toggle
-  const handleFullscreen = () => {
-    if (videoRef.current) {
-      if (videoRef.current.requestFullscreen) {
-        videoRef.current.requestFullscreen();
-      }
-    }
+  const handleFullscreen = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    videoRef.current?.requestFullscreen?.();
+  };
+
+  const goToSlide = (idx: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex(idx);
   };
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[60dvh] sm:h-[75dvh] md:h-[85dvh] lg:h-[calc(100dvh-80px)] bg-black overflow-hidden group select-none"
+      className="relative w-full h-[65dvh] sm:h-[75dvh] md:h-[85dvh] lg:h-[calc(100dvh-80px)] bg-black overflow-hidden group select-none"
     >
-      {/* Main Full-Width Video */}
       <video
         ref={videoRef}
         src={videos[currentIndex].url}
         onTimeUpdate={handleTimeUpdate}
-        onEnded={handleNext}
+        onEnded={() => handleNext()}
+        autoPlay
         playsInline
+        preload="auto"
         className="w-full h-full object-cover cursor-pointer"
         onClick={togglePlay}
       />
 
-      {/* 🔊 Floating Sound Prompt (Appears when muted) */}
-      {isMuted && (
+      {needsSoundTap && isInView && (
         <button
           onClick={toggleMute}
-          className="absolute top-6 left-1/2 -translate-x-1/2 z-40 inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-emerald-600/90 hover:bg-emerald-500 text-white rounded-full text-xs sm:text-sm font-medium shadow-xl backdrop-blur-md transition-all animate-bounce hover:scale-105 active:scale-95"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 hover:bg-black/80 text-white text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/20 shadow-lg animate-pulse"
         >
-          <VolumeX className="w-4 h-4 text-white" />
-          <span>সাউন্ড শুনতে এখানে ক্লিক করুন</span>
+          <VolumeX className="w-4 h-4 text-rose-400" />
+          <span>শব্দ চালু করতে স্পর্শ করুন</span>
         </button>
       )}
 
-      {/* Navigation Arrow Left */}
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-30 max-w-[75%]">
+        <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-[10px] sm:text-xs font-semibold mb-2">
+          আল্লাহ মালিক হাসপাতাল বরগুনা
+        </span>
+        <h2 className="text-sm sm:text-xl md:text-2xl font-bold text-white drop-shadow-md leading-snug">
+          {videos[currentIndex].title}
+        </h2>
+      </div>
+
       <button
         onClick={handlePrev}
         aria-label="Previous Video"
@@ -194,19 +229,15 @@ export default function HeroSection() {
         <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
       </button>
 
-      {/* Navigation Arrow Right */}
       <button
-        onClick={handleNext}
+        onClick={(e) => handleNext(e)}
         aria-label="Next Video"
         className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 sm:p-4 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md border border-white/20 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-110 active:scale-95"
       >
         <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
       </button>
 
-      {/* Modern Overlay Controls Bar at Bottom */}
       <div className="absolute bottom-0 left-0 right-0 z-30 p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
-        
-        {/* Seek / Progress Bar */}
         <div className="w-full h-1.5 sm:h-2 bg-white/20 rounded-full overflow-hidden mb-3 sm:mb-4 cursor-pointer">
           <div
             className="h-full bg-emerald-500 transition-all duration-200"
@@ -215,8 +246,6 @@ export default function HeroSection() {
         </div>
 
         <div className="flex items-center justify-between">
-          
-          {/* Left Controls: Play/Pause, Mute & Slide Index */}
           <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={togglePlay}
@@ -234,7 +263,7 @@ export default function HeroSection() {
               onClick={toggleMute}
               className={`p-2 sm:p-2.5 rounded-xl backdrop-blur-md transition-all active:scale-90 ${
                 isMuted
-                  ? "bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse"
+                  ? "bg-rose-500/20 text-rose-400 border border-rose-500/40"
                   : "bg-white/10 hover:bg-white/20 text-emerald-400"
               }`}
               aria-label="Mute/Unmute"
@@ -246,20 +275,17 @@ export default function HeroSection() {
               )}
             </button>
 
-            {/* Video Counter Indicator */}
             <div className="text-xs sm:text-sm font-semibold text-white/80 bg-black/40 px-3 py-1.5 rounded-lg border border-white/10">
               {currentIndex + 1} / {videos.length}
             </div>
           </div>
 
-          {/* Right Controls: Slide Thumbnails & Fullscreen */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Dots / Selectors */}
             <div className="flex items-center gap-1.5 mr-2">
               {videos.map((vid, idx) => (
                 <button
                   key={vid.id}
-                  onClick={() => setCurrentIndex(idx)}
+                  onClick={(e) => goToSlide(idx, e)}
                   className={`h-2 sm:h-2.5 rounded-full transition-all ${
                     currentIndex === idx
                       ? "w-6 sm:w-8 bg-emerald-500"
@@ -277,9 +303,7 @@ export default function HeroSection() {
               <Maximize className="w-5 h-5" />
             </button>
           </div>
-
         </div>
-
       </div>
     </section>
   );
