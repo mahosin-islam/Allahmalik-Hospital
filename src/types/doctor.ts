@@ -1,17 +1,21 @@
 export interface Doctor {
   id: string;
-  name: string;
-  nameEn: string;
+  slug: string;
+  nameBN: string;
+  nameEN: string;
   qualification: string;
-  speciality: string;
-  specialityEn: string;
+  specialityBN: string;
+  specialityEN: string;
   designation: string;
-  department: string;
-  departmentEn: string;
+  departmentBN: string;
+  departmentEN: string;
   hospital: string;
   experience: string;
   image: string;
   chamberTime: string;
   phone: string;
   about: string;
+  fees: number;
 }
+
+export type DoctorInput = Partial<Omit<Doctor, "id">>;

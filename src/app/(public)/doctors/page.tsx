@@ -1,11 +1,13 @@
 import { Metadata } from "next";
-import { doctorsData } from "@/data/doctors";
+import { getAllDoctors } from "@/lib/services/doctorService";
 import DoctorsClient from "@/components/doctors/DoctorsClient";
 
 const siteUrl = "https://www.allahmalik-hospital.com";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
- title: "বরগুনা ডাক্তার তালিকা ও সিরিয়াল | Doctor List - Allahmalik Hospital",
+  title: "বরগুনা ডাক্তার তালিকা ও সিরিয়াল | Doctor List - Allahmalik Hospital",
   description:
     "আল্লাহ মালিক হাসপাতাল বরগুনার সকল বিশেষজ্ঞ ডাক্তারের তালিকা, চেম্বার সময়সূচি ও সিরিয়াল নম্বর পেতে ভিজিট করুন। Book doctor appointments online.",
   keywords: [
@@ -30,7 +32,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DoctorsPage() {
+export default async function DoctorsPage() {
+  const doctors = await getAllDoctors();
+
   // 🟢 ItemList & MedicalWebPage Schema Injection for SEO
   const jsonLd = {
     "@context": "https://schema.org",
@@ -40,14 +44,14 @@ export default function DoctorsPage() {
     "description": "Allah Malik Hospital Barguna Specialist Doctors Directory and Appointment Serial Numbers.",
     "mainEntity": {
       "@type": "ItemList",
-      "itemListElement": doctorsData.map((doc, index) => ({
+      "itemListElement": doctors.map((doc, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "item": {
           "@type": "Physician",
-          "name": `${doc.nameEn} (${doc.name})`,
-          "medicalSpecialty": doc.specialityEn,
-          "url": `${siteUrl}/doctors/${doc.id}`
+          "name": `${doc.nameEN} (${doc.nameBN})`,
+          "medicalSpecialty": doc.specialityEN,
+          "url": `${siteUrl}/doctors/${doc.slug}`
         }
       }))
     }
@@ -59,7 +63,7 @@ export default function DoctorsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <DoctorsClient doctorsData={doctorsData} />
+      <DoctorsClient doctorsData={doctors} />
     </>
   );
 }

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Stethoscope, ArrowRight, Award, Clock, ChevronRight } from "lucide-react";
-import { doctorsData } from "@/data/doctors";
+import { getFeaturedDoctors } from "@/lib/services/doctorService";
 
-export default function DoctorsSection() {
-  const featuredDoctors = doctorsData.slice(0, 4);
+export default async function DoctorsSection() {
+  const featuredDoctors = await getFeaturedDoctors(4);
 
   // 🟢 Google Structured Data (Schema.org / ItemList Markup) for SEO
   const jsonLd = {
@@ -16,8 +16,8 @@ export default function DoctorsSection() {
       "position": index + 1,
       "item": {
         "@type": "Physician",
-        "name": doctor.name,
-        "medicalSpecialty": doctor.speciality,
+        "name": doctor.nameBN,
+        "medicalSpecialty": doctor.specialityBN,
         "description": doctor.qualification,
         "image": doctor.image,
       },
@@ -61,8 +61,7 @@ export default function DoctorsSection() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-4 lg:gap-6">
       {featuredDoctors.map((doctor) => (
         <article
-          key={doctor.id}
-          className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-sm hover:shadow-md"
+          key={doctor.id}          className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-sm hover:shadow-md"
         >
           <div>
             {/* 🎯 Image Container with Null Fallback */}
@@ -70,7 +69,7 @@ export default function DoctorsSection() {
               {doctor.image ? (
                 <Image
                   src={doctor.image}
-                  alt={`${doctor.name} - ${doctor.speciality || doctor.department || 'Doctor'}`}
+                  alt={`${doctor.nameBN} - ${doctor.specialityBN || doctor.departmentBN || 'Doctor'}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -87,9 +86,9 @@ export default function DoctorsSection() {
                 </div>
               )}
 
-              {doctor.department && (
+              {doctor.departmentBN && (
                 <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-md z-10">
-                  {doctor.department}
+                  {doctor.departmentBN}
                 </div>
               )}
             </div>
@@ -98,7 +97,7 @@ export default function DoctorsSection() {
             <div className="p-4 sm:p-5 space-y-3">
               <div>
                 <h3 className="font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-1">
-                  {doctor.name}
+                  {doctor.nameBN}
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-1">
                   {doctor.qualification}
@@ -125,7 +124,7 @@ export default function DoctorsSection() {
           {/* Action Button */}
           <div className="p-4 sm:p-5 pt-0">
             <Link
-              href={`/doctors/${doctor.id}`}
+              href={`/doctors/${doctor.slug}`}
               className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-emerald-600 text-white dark:bg-slate-700/60 dark:hover:bg-emerald-600 dark:text-slate-200 rounded-xl font-medium text-xs transition-all duration-200 group/btn"
             >
               <span>বিস্তারিত দেখুন</span>

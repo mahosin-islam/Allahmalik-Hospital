@@ -7,6 +7,7 @@ import {
   Clock,
   ChevronRight,
   Heart,
+  Lock,
 } from "lucide-react";
 
 export default function Footer() {
@@ -132,6 +133,13 @@ export default function Footer() {
           <p className="flex items-center gap-1">
             Carefully Designed & Built with <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500" /> for Better Healthcare.
           </p>
+          <Link
+            href="/login"
+            aria-label="Admin Login"
+            className="inline-flex items-center gap-1 text-slate-700 hover:text-emerald-400 transition-colors"
+          >
+            <Lock className="w-3 h-3" />
+          </Link>
         </div>
 
       </div>

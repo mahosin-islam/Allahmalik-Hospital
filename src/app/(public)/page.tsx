@@ -7,6 +7,8 @@ import HeroSection from '@/components/landing/HeroSection';
 import Testimonials from '@/components/landing/Testimonials';
 import PartnerReadiness from '@/components/landing/PartnerReadiness';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: {
     absolute: 'Allah Malik Hospital | Barguna Private Hospital - বরগুনা বেসরকারি হাসপাতাল',
