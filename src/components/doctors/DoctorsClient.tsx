@@ -4,17 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, Clock, Stethoscope, CalendarCheck } from "lucide-react";
-
-interface Doctor {
-  id: string | number;
-  name: string;
-  speciality: string;
-  qualification: string;
-  image: string;
-  department?: string;
-  experience?: string;
-  chamberTime?: string;
-}
+import type { Doctor } from "@/types/doctor";
 
 interface DoctorsClientProps {
   doctorsData: Doctor[];
@@ -28,17 +18,17 @@ export default function DoctorsClient({ doctorsData }: DoctorsClientProps) {
     "name": "বিশেষজ্ঞ চিকিৎসকবৃন্দ",
     "description": "আমাদের হাসপাতালের অভিজ্ঞ ও বিশেষায়িত ডাক্তারদের তালিকা",
     "numberOfItems": doctorsData.length,
-    "itemListElement": doctorsData.map((doctor, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Physician",
-        "name": doctor.name,
-        "medicalSpecialty": doctor.speciality,
-        "description": doctor.qualification,
-        "image": doctor.image,
-      },
-    })),
+      "itemListElement": doctorsData.map((doctor, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Physician",
+          "name": doctor.nameBN,
+          "medicalSpecialty": doctor.specialityBN,
+          "description": doctor.qualification,
+          "image": doctor.image,
+        },
+      })),
   };
 
 return (
@@ -78,7 +68,7 @@ return (
                   {doctor.image ? (
                     <Image
                       src={doctor.image}
-                      alt={`${doctor.name} - ${doctor.speciality}`}
+                      alt={`${doctor.nameBN} - ${doctor.specialityBN}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -97,9 +87,9 @@ return (
                     </div>
                   )}
 
-                  {doctor.department && (
+                  {doctor.departmentBN && (
                     <div className="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-10">
-                      {doctor.department}
+                      {doctor.departmentBN}
                     </div>
                   )}
                 </div>
@@ -107,7 +97,7 @@ return (
                 <div className="p-5 space-y-3">
                   <div>
                     <h2 className="font-bold text-base sm:text-lg text-slate-900 dark:text-foreground group-hover:text-emerald-600 dark:group-hover:text-primary transition-colors line-clamp-1">
-                      {doctor.name}
+                      {doctor.nameBN}
                     </h2>
                     <p className="text-xs text-slate-500 dark:text-muted-foreground mt-0.5 line-clamp-1 font-medium">
                       {doctor.qualification}
@@ -133,7 +123,7 @@ return (
 
               <div className="p-5 pt-0">
                 <Link
-                  href={`/doctors/${doctor.id}`}
+                  href={`/doctors/${doctor.slug}`}
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-emerald-600 text-white dark:bg-slate-700/60 dark:hover:bg-emerald-600 dark:text-slate-200 rounded-xl font-medium text-xs transition-all duration-200 group/btn"
                 >
                   <span>বিস্তারিত দেখুন</span>

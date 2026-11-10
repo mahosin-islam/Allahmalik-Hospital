@@ -12,7 +12,9 @@ import {
   Award,
   ArrowRight,
 } from "lucide-react";
-import { doctorsData } from "@/data/doctors";
+import { getDoctorsByKeywords } from "@/lib/services/doctorService";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "লিভার, গ্যাস্ট্রোএন্টারোলজি ও পরিপাকতন্ত্র বিভাগ | Allahmalik Hospital Barguna",
@@ -27,16 +29,9 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function GastroenterologySpecialityPage() {
+export default async function GastroenterologySpecialityPage() {
   // Filter doctors for Gastroenterology Department
-  const gastroDoctors = doctorsData.filter(
-    (doc) =>
-      doc.department.includes("গ্যাস্ট্রোএন্টারোলজি") ||
-      doc.department.includes("লিভার") ||
-      doc.department.includes("পরিপাকতন্ত্র") ||
-      doc.speciality.includes("গ্যাস্ট্রোএন্টারোলজি") ||
-      doc.speciality.includes("লিভার")
-  );
+  const gastroDoctors = await getDoctorsByKeywords(["গ্যাস্ট্রোএন্টারোলজি", "লিভার", "পরিপাকতন্ত্র"]);
 
   const services = [
     "ক্রনিক গ্যাস্ট্রিক, এসিডিটি ও আলসার রোগের স্থায়ী সমাধান",
@@ -163,7 +158,7 @@ export default function GastroenterologySpecialityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {gastroDoctors.map((doc) => (
               <div
-                key={doc.id}
+                key={doc.slug}
                 className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
@@ -171,7 +166,7 @@ export default function GastroenterologySpecialityPage() {
                   <div className="relative h-64 w-full bg-slate-100 overflow-hidden">
                     <Image
                       src={doc.image}
-                      alt={doc.name}
+                      alt={doc.nameBN}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -188,7 +183,7 @@ export default function GastroenterologySpecialityPage() {
                   <div className="p-6 space-y-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">
-                        {doc.name}
+                        {doc.nameBN}
                       </h3>
                       <p className="text-xs font-semibold text-emerald-600 mt-0.5">
                         {doc.designation}
@@ -215,7 +210,7 @@ export default function GastroenterologySpecialityPage() {
                 {/* Card Action Link (Dynamic Detail Page Link) */}
                 <div className="p-6 pt-0 border-t border-slate-50 mt-4">
                   <Link
-                    href={`/doctors/${doc.id}`}
+                    href={`/doctors/${doc.slug}`}
                     className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold transition-all shadow-md shadow-emerald-200"
                   >
                     <Calendar className="w-4 h-4" />

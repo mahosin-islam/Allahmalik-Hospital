@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { doctorsData } from "@/data/doctors";
+import { getDoctorBySlug } from "@/lib/services/doctorService";
 import { Calendar, PhoneCall, Award, Clock, ChevronLeft, ShieldCheck, Stethoscope, CheckCircle2 } from "lucide-react";
 
 interface PageProps {
@@ -11,10 +11,12 @@ interface PageProps {
   }>;
 }
 
+export const dynamic = "force-dynamic";
+
 // 🟢 Advanced Dynamic SEO & Local Keyword Targeting
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const doctor = doctorsData.find((doc) => doc.id === resolvedParams.id);
+  const doctor = await getDoctorBySlug(resolvedParams.id);
 
   if (!doctor) {
     return {
@@ -26,22 +28,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const siteUrl = "https://www.allahmalik-hospital.com";
 
   // SEO Title with explicit search intent keywords
-  const pageTitle = `${doctor.name} - ${doctor.speciality} বরগুনা | ${doctor.nameEn}`;
-  const pageDescription = `${doctor.name} (${doctor.speciality}) - বরগুনা। ${doctor.qualification}। ${doctor.about} চেম্বার সময়: ${doctor.chamberTime}। আল্লাহ মালিক হাসপাতাল বরগুনা।`;
+  const pageTitle = `${doctor.nameBN} - ${doctor.specialityBN} বরগুনা | ${doctor.nameEN}`;
+  const pageDescription = `${doctor.nameBN} (${doctor.specialityBN}) - বরগুনা। ${doctor.qualification}। ${doctor.about} চেম্বার সময়: ${doctor.chamberTime}। আল্লাহ মালিক হাসপাতাল বরগুনা।`;
 
   return {
     title: pageTitle,
     description: pageDescription,
     keywords: [
-      doctor.name,
-      doctor.nameEn,
-      `${doctor.name} বরগুনা`,
-      `${doctor.nameEn} Barguna`,
-      doctor.speciality,
-      doctor.specialityEn,
-      doctor.department,
-      `${doctor.speciality} বরগুনা`,
-      `${doctor.specialityEn} in Barguna`,
+      doctor.nameBN,
+      doctor.nameEN,
+      `${doctor.nameBN} বরগুনা`,
+      `${doctor.nameEN} Barguna`,
+      doctor.specialityBN,
+      doctor.specialityEN,
+      doctor.departmentBN,
+      `${doctor.specialityBN} বরগুনা`,
+      `${doctor.specialityEN} in Barguna`,
       // Local Search Keywords for disease & treatment
       "বরগুনা বিশেষজ্ঞ ডাক্তার",
       "বরগুনা ডাক্তার সিরিয়াল",
@@ -49,12 +51,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "আল্লাহ মালিক হাসপাতাল বরগুনা",
     ],
     alternates: {
-      canonical: `${siteUrl}/doctors/${doctor.id}`,
+      canonical: `${siteUrl}/doctors/${doctor.slug}`,
     },
     openGraph: {
       title: pageTitle,
       description: pageDescription,
-      url: `${siteUrl}/doctors/${doctor.id}`,
+      url: `${siteUrl}/doctors/${doctor.slug}`,
       siteName: "Allah Malik Hospital Barguna",
       locale: "bn_BD",
       type: "profile",
@@ -63,7 +65,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: doctor.image,
           width: 800,
           height: 600,
-          alt: `${doctor.name} - ${doctor.speciality}`,
+          alt: `${doctor.nameBN} - ${doctor.specialityBN}`,
         },
       ],
     },
@@ -78,7 +80,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DoctorDetailPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const doctor = doctorsData.find((doc) => doc.id === resolvedParams.id);
+  const doctor = await getDoctorBySlug(resolvedParams.id);
 
   if (!doctor) {
     notFound();
@@ -88,13 +90,13 @@ export default async function DoctorDetailPage({ params }: PageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "name": `${doctor.nameEn} (${doctor.name})`,
+    "name": `${doctor.nameEN} (${doctor.nameBN})`,
     "image": doctor.image,
     "telephone": doctor.phone,
-    "medicalSpecialty": doctor.specialityEn,
-    "knowsAbout": [doctor.speciality, doctor.department, doctor.about],
+    "medicalSpecialty": doctor.specialityEN,
+    "knowsAbout": [doctor.specialityBN, doctor.departmentBN, doctor.about],
     "description": doctor.about,
-    "url": `https://www.allahmalik-hospital.com/doctors/${doctor.id}`,
+    "url": `https://www.allahmalik-hospital.com/doctors/${doctor.slug}`,
     "hospitalAffiliation": {
       "@type": "Hospital",
       "name": "Allah Malik Hospital Barguna",
@@ -140,7 +142,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
             {doctor.image ? (
            <Image
   src={doctor.image}
-  alt={`${doctor.name} - ${doctor.speciality} বরগুনা`}
+              alt={`${doctor.nameBN} - ${doctor.specialityBN} বরগুনা`}
   fill
   sizes="(max-width: 768px) 100vw, 40vw"
   className="object-cover object-top"
@@ -173,16 +175,16 @@ export default async function DoctorDetailPage({ params }: PageProps) {
               
               <div>
                 <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold rounded-full mb-2.5">
-                  {doctor.department}
+                  {doctor.departmentBN}
                 </span>
                 <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-                  {doctor.name}
+                  {doctor.nameBN}
                 </h1>
                 <p className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
                   {doctor.qualification}
                 </p>
                 <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 mt-2">
-                  {doctor.speciality}
+                  {doctor.specialityBN}
                 </p>
               </div>
 
@@ -221,7 +223,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-400">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                    <span>{doctor.speciality} পরামর্শ</span>
+                    <span>{doctor.specialityBN} পরামর্শ</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
