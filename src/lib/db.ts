@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI ?? "";
-
-if (!MONGODB_URI) {
-  throw new Error("MONGODB_URI is not defined. Add it to your .env file.");
+// NOTE: env is read at CALL time, not module-load time. During `next build`
+// (e.g. on Vercel) this module gets evaluated before env vars may exist —
+// throwing at the top level here would break the production build.
+function getMongoUri(): string {
+  const uri = process.env.MONGODB_URI ?? "";
+  if (!uri) {
+    throw new Error(
+      "MONGODB_URI is not defined. Add it to your environment variables."
+    );
+  }
+  return uri;
 }
 
 interface MongooseCache {
@@ -22,7 +29,7 @@ async function dbConnect(): Promise<typeof mongoose> {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
+    cached.promise = mongoose.connect(getMongoUri(), {
       bufferCommands: false,
     });
   }
