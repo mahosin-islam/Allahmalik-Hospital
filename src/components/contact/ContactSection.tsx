@@ -149,7 +149,7 @@ export default function ContactSection() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-emerald-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-emerald-200 hover:bg-emerald-700 transition-all hover:scale-[1.01]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>বার্তা পাঠান</span>
+                  <span>বার্তা পাঠান </span>
                 </button>
               </form>
             )}

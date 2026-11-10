@@ -13,7 +13,7 @@ import {
 
 export default function AboutView() {
   const stats = [
-    { id: 1, name: "অভিজ্ঞ বিশেষজ্ঞ ডাক্তার", value: "২০+" },
+    { id: 1, name: "অভিজ্ঞ বিশেষজ্ঞ ডাক্তার", value: "২5+" },
     { id: 2, name: "সেবাগ্রাহক রোগী", value: "৫০,০০০+" },
     { id: 3, name: "২৪/৭ জরুরি ও ল্যাব সেবা", value: "৩৬৫ দিন" },
     { id: 4, name: "আধুনিক ডিজিটাল টেস্ট", value: "১০০+" },
